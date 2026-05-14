@@ -1,0 +1,90 @@
+.carousel {
+  width: 100%;
+  margin: 1rem 0;
+}
+
+/* the window that clips left/right */
+.carousel-track-wrapper {
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-end;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 2rem 0 0; /* room for items to rise into */
+}
+
+.carousel-item {
+  flex-shrink: 0;
+  height: 400px;
+  cursor: pointer;
+  border-radius: 3px;
+  overflow: hidden;
+  transition: transform 0.4s ease;
+}
+
+.carousel-item img,
+.carousel-item video {
+  height: 100%;
+  width: auto; /* width is determined by the image's natural ratio */
+  object-fit: cover;
+  display: block;
+  border-radius: 3px;
+}
+
+/* active item rises */
+.carousel-item.active {
+  transform: translateY(-20px);
+}
+
+.carousel-caption {
+  text-align: center;
+  font-family: "DM Mono", monospace;
+  font-size: 0.8rem;
+  color: #1a1a1a;
+  height: 1.5rem;
+  margin-top: 2rem;
+  opacity: 0;
+  transition: opacity 0.3s ease 0.2s; /* slight delay so it fades after rise */
+}
+
+.carousel-caption.carousel-prompt {
+  opacity: 1;
+  text-align: center;
+  font-family: "DM Mono", monospace;
+  font-size: 0.8rem;
+  color: #1a1a1a;
+  height: 1.5rem;
+  margin-top: 2rem;
+}
+
+.carousel-caption.visible {
+  opacity: 1;
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.carousel-dot {
+  width: 10px;
+  height: 10px;
+  border: 1px solid #1a1a1a;
+  border-radius: 2px;
+  background: transparent;
+  transform: rotate(45deg);
+  cursor: pointer;
+  transition: background 0.2s;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.carousel-dot.active {
+  background: #1a1a1a;
+}

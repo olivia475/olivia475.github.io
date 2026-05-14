@@ -1,0 +1,107 @@
+/* Global styles */
+@font-face {
+  font-family: 'Alte Haas Grotesk';
+  src: url('fonts/AlteHaasGroteskRegular.ttf');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Alte Haas Grotesk';
+  src: url('fonts/AlteHaasGroteskBold.ttf');
+  font-weight: 700;
+}
+
+body {
+  padding-top: 2rem;
+}
+
+.highlight {
+  font-family: "DM Mono", monospace;
+  font-weight: 500;
+  color:  #aaaaaa;
+  font-size: 0.8rem;
+}
+
+h1 {
+  font-family: "Alte Haas Grotesk", sans-serif;
+  font-size: 2rem;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+  padding-top: 2rem;
+}
+
+p {
+  font-family: "DM Mono", monospace;
+  margin: 0;
+  padding-bottom: 1rem;
+  font-size: 0.8rem;
+  color: #1a1a1a;
+  max-width: 50rem;
+  line-height: 1.5;
+}
+
+.page-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.inline-logo {
+  height: 1.2em;        
+  width: auto;
+  vertical-align: middle;  
+  border-radius: 2px; 
+  margin-right: 1rem;
+}
+
+.divider {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  gap: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+}
+
+/* Playground page */
+.grid {
+  columns: 3;
+  column-gap: 1rem;
+  margin: 2rem 0;
+}
+
+.grid-item {
+  break-inside: avoid; /* prevents an item from splitting across columns */
+  margin-bottom: 1rem;
+}
+
+.grid-item img {
+  width: 100%;
+  display: block;
+  border-radius: 3px;
+  background-color: #d9d9d9; /* placeholder color while image loads */
+}
+
+.grid-item video {
+  width: 100%;
+  display: block;
+  border-radius: 3px;
+}
+
+.grid p {
+  padding-bottom: 0;
+}
+
+.grid-caption {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 4px 0 8px;
+}
+
+@media (max-width: 50rem) {
+  .grid {
+    columns: 1;
+  }
+}

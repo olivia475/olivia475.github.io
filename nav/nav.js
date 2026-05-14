@@ -1,0 +1,27 @@
+// nav.js
+class SiteNav extends HTMLElement {
+  connectedCallback() {
+    this.innerHTML = `
+      <nav class="navbar">
+        <a href="index.html" class="nav-link">
+          <span class="nav-logo-dot">▪</span> Olivia Blackmore
+        </a>
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Work</a></li>
+          <li><a href="play.html" class="nav-link">Play</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="resume.html" class="nav-link">Resume</a></li>
+        </ul>
+      </nav>
+    `;
+
+    // Highlight the active page
+    this.querySelectorAll('.nav-links a').forEach(link => {
+      if (link.href === window.location.href) {
+        link.classList.add('active');
+      }
+    });
+  }
+}
+
+customElements.define('site-nav', SiteNav);
