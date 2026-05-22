@@ -43,3 +43,39 @@
 .nav-link:hover {
   opacity: 0.5;
 }
+
+/* hover effects for work items */
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav-logo:hover {
+  opacity: 1; 
+}
+
+.nav-logo:hover .nav-logo-dot {
+  display: inline-block;
+  transform: rotate(-45deg);
+}
+
+.nav-logo-dot {
+  display: inline-block;
+  transition: transform 0.3s ease;
+  vertical-align: middle;
+  font-size: 1rem;
+  padding-bottom: 0.1rem;
+}
+
+.nav-logo-subtitle {
+  opacity: 0;
+  transform: translateX(-6px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  color: #aaaaaa;
+}
+
+.nav-logo:hover .nav-logo-subtitle {
+  opacity: 1;
+  transform: translateX(0);
+}

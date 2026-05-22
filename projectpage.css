@@ -1,0 +1,67 @@
+
+
+/* project page hero details */
+.project-meta {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+.meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.meta-item .highlight {
+  font-style: italic;
+  letter-spacing: 0.1em;
+}
+
+.meta-item p {
+  padding-bottom: 0;
+}
+
+@media (max-width: 600px) {
+  .project-meta {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+
+/* hero image gallery */
+.project-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 2rem 0;
+}
+
+.gallery-full img {
+  width: 100%;
+  display: block;
+  border-radius: 3px;
+  object-fit: cover;
+}
+
+.gallery-half {
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* left panel narrower, right wider — matches your screenshot */
+  gap: 0.5rem;
+}
+
+.gallery-half img {
+  width: 100%;
+  display: block;
+  border-radius: 3px;
+  object-fit: cover;
+  height: 100%; /* fills the row height evenly */
+}
+
+@media (max-width: 600px) {
+  .gallery-half {
+    grid-template-columns: 1fr;
+  }
+}

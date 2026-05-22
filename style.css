@@ -16,7 +16,15 @@
   cursor: url("images/cursor.png"), auto;
 }
 
-a, button, [role="button"], input, label, select, textarea, .carousel-item, .carousel-dot {
+a,
+button,
+[role="button"],
+input,
+label,
+select,
+textarea,
+.carousel-item,
+.carousel-dot {
   cursor: url("images/cursor-hover.png"), pointer;
 }
 
@@ -138,7 +146,7 @@ p {
 
 @media (max-width: 700px) {
   .hero-bottom {
-    grid-template-columns: 1fr;  /* stack into single column */
+    grid-template-columns: 1fr; /* stack into single column */
   }
 
   .hero-bio,
@@ -149,9 +157,9 @@ p {
   }
 
   .hero-dots {
-      display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 
@@ -184,7 +192,9 @@ p {
   font-style: italic;
   opacity: 0;
   transform: translateY(-4px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
 }
 
 .hero-dot:hover .dot-shape {
@@ -364,3 +374,85 @@ p {
 .grid-link:hover .grid-overlay {
   opacity: 1;
 }
+
+/* about */
+.about-layout {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 3rem;
+  align-items: start;
+}
+
+.inline-logo {
+  height: 2rem; /* was 1.2em */
+  width: auto;
+  vertical-align: middle;
+  border-radius: 2px;
+  margin-right: 0;
+}
+
+.about-dots {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding-top: 2rem;
+  position: sticky; /* keeps dots visible as you scroll */
+  top: 80px;
+}
+
+.about-dot-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.about-dot {
+  display: inline-block;
+  font-size: 2rem;
+  transition: transform 0.3s ease;
+  cursor: default;
+  line-height: 1;
+}
+
+.about-dot-item:hover .about-dot {
+  transform: rotate(-45deg);
+}
+
+.about-dot-image {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 3px;
+  opacity: 0;
+  transform: translateY(-8px);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+.about-dot-item:hover .about-dot-image {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* about page experience grid */
+.experience-grid h2 {
+  margin: 0;
+}
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 3rem 2rem;
+  align-items: center;
+  justify-items: start; /* default */
+}
+
+.experience-grid .inline-logo {
+  justify-self: center;
+}
+
+
+
+

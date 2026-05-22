@@ -16,7 +16,6 @@
     <site-nav></site-nav>
 
     <main class="page-content">
-
       <div class="hero-video">
         <canvas id="cloud-canvas"></canvas>
         <div class="hero-glass-overlay">
@@ -43,17 +42,14 @@
             <span class="dot-shape">▪</span>
             <span class="dot-label">LinkedIn</span>
           </a>
-                    <a
-            href=""
-            target="_blank"
-            class="hero-dot"
-          >
+          <a href="" target="_blank" class="hero-dot">
             <span class="dot-shape">▪</span>
             <span class="dot-label">Resume</span>
           </a>
         </div>
         <p class="hero-study">
-          Learning to understand people & design at SFU's School of Interactive Arts & Technology.
+          Learning to understand people & design at SFU's School of Interactive
+          Arts & Technology.
         </p>
       </div>
 
@@ -82,15 +78,17 @@
               <p>UX RESEARCH</p>
               <span class="tag-dot">▪</span>
               <p>MOTION GRAPHICS</p>
+              <span class="tag-dot">▪</span>
+              <p>DESIGN-ATHON</p>
             </div>
           </div>
         </a>
 
-        <a href="" class="work-item">
+        <a href="ssfb.html" class="work-item">
           <div class="work-thumbnail">
             <img src="images/ssfb cover.png" alt="Strange Sounds From Beyond" />
             <div class="work-overlay">
-              <p>[ Coming Soon ]</p>
+              <p>[ Learn More ]</p>
             </div>
           </div>
           <div class="work-info">
@@ -111,11 +109,11 @@
           </div>
         </a>
 
-        <a href="" class="work-item">
+        <a href="ghhk.html" class="work-item">
           <div class="work-thumbnail">
             <img src="images/ghhk cover.png" alt="GHHK Cover" />
             <div class="work-overlay">
-              <p>[ Coming Soon ]</p>
+              <p>[ Learn More ]</p>
             </div>
           </div>
           <div class="work-info">
@@ -149,8 +147,8 @@
     </script>
 
     <script>
-      const canvas = document.getElementById('cloud-canvas');
-      const ctx = canvas.getContext('2d');
+      const canvas = document.getElementById("cloud-canvas");
+      const ctx = canvas.getContext("2d");
 
       let mouse = { x: 0, y: 0 };
       let width, height;
@@ -162,7 +160,7 @@
         speedX: (Math.random() - 0.5) * 0.3,
         speedY: (Math.random() - 0.5) * 0.1,
         opacity: 0.4 + Math.random() * 0.4,
-        hue: Math.random() > 0.5 ? '#ffffff' : '#d6eaf8',
+        hue: Math.random() > 0.5 ? "#ffffff" : "#d6eaf8",
       }));
 
       function resize() {
@@ -172,10 +170,10 @@
         canvas.height = height;
       }
 
-      window.addEventListener('resize', resize);
+      window.addEventListener("resize", resize);
       resize();
 
-      canvas.parentElement.addEventListener('mousemove', e => {
+      canvas.parentElement.addEventListener("mousemove", (e) => {
         const rect = canvas.getBoundingClientRect();
         mouse.x = e.clientX - rect.left;
         mouse.y = e.clientY - rect.top;
@@ -184,12 +182,12 @@
       function draw() {
         // sky gradient background
         const gradient = ctx.createLinearGradient(0, 0, 0, height);
-        gradient.addColorStop(0, '#b8d4e8');
-        gradient.addColorStop(1, '#ddeeff');
+        gradient.addColorStop(0, "#b8d4e8");
+        gradient.addColorStop(1, "#ddeeff");
         ctx.fillStyle = gradient;
         ctx.fillRect(0, 0, width, height);
 
-        clouds.forEach(cloud => {
+        clouds.forEach((cloud) => {
           // drift toward mouse gently
           const dx = mouse.x - cloud.x;
           const dy = mouse.y - cloud.y;
@@ -204,8 +202,12 @@
 
           // draw cloud blob
           const grad = ctx.createRadialGradient(
-            cloud.x, cloud.y, 0,
-            cloud.x, cloud.y, cloud.radius
+            cloud.x,
+            cloud.y,
+            0,
+            cloud.x,
+            cloud.y,
+            cloud.radius,
           );
           grad.addColorStop(0, `rgba(255,255,255,${cloud.opacity})`);
           grad.addColorStop(1, `rgba(255,255,255,0)`);

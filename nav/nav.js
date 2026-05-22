@@ -1,10 +1,9 @@
-// nav.js
 class SiteNav extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
       <nav class="navbar">
-        <a href="index.html" class="nav-link">
-          <span class="nav-logo-dot">▪</span> Olivia Blackmore
+        <a href="index.html" class="nav-link nav-logo">
+          <span class="nav-logo-dot">▪</span> Olivia Blackmore<span class="nav-logo-subtitle"> [ Visual Designer ]</span>
         </a>
         <ul class="nav-links">
           <li><a href="index.html" class="nav-link">Work</a></li>
@@ -15,7 +14,6 @@ class SiteNav extends HTMLElement {
       </nav>
     `;
 
-    // Highlight the active page
     this.querySelectorAll('.nav-links a').forEach(link => {
       if (link.href === window.location.href) {
         link.classList.add('active');
