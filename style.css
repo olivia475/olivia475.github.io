@@ -1,25 +1,27 @@
-/* Global styles */
+/* Fonts */
 @font-face {
-  font-family: 'Alte Haas Grotesk';
-  src: url('fonts/AlteHaasGroteskRegular.ttf');
+  font-family: "Alte Haas Grotesk";
+  src: url("fonts/AlteHaasGroteskRegular.ttf");
   font-weight: 400;
 }
 
 @font-face {
-  font-family: 'Alte Haas Grotesk';
-  src: url('fonts/AlteHaasGroteskBold.ttf');
+  font-family: "Alte Haas Grotesk";
+  src: url("fonts/AlteHaasGroteskBold.ttf");
   font-weight: 700;
 }
 
-body {
-  padding-top: 2rem;
+/* Global */
+* {
+  cursor: url("images/cursor.png"), auto;
 }
 
-.highlight {
-  font-family: "DM Mono", monospace;
-  font-weight: 500;
-  color:  #aaaaaa;
-  font-size: 0.8rem;
+a, button, [role="button"], input, label, select, textarea, .carousel-item, .carousel-dot {
+  cursor: url("images/cursor-hover.png"), pointer;
+}
+
+body {
+  padding-top: 3rem;
 }
 
 h1 {
@@ -28,6 +30,12 @@ h1 {
   color: #1a1a1a;
   margin-bottom: 1rem;
   padding-top: 2rem;
+}
+
+h2 {
+  font-family: "Alte Haas Grotesk", sans-serif;
+  font-size: 1.5rem;
+  color: #1a1a1a;
 }
 
 p {
@@ -40,6 +48,13 @@ p {
   line-height: 1.5;
 }
 
+.highlight {
+  font-family: "DM Mono", monospace;
+  font-weight: 500;
+  color: #aaaaaa;
+  font-size: 0.8rem;
+}
+
 .page-content {
   max-width: 1100px;
   margin: 0 auto;
@@ -47,24 +62,238 @@ p {
 }
 
 .inline-logo {
-  height: 1.2em;        
+  height: 1.2em;
   width: auto;
-  vertical-align: middle;  
-  border-radius: 2px; 
+  vertical-align: middle;
+  border-radius: 2px;
   margin-right: 1rem;
 }
 
 .divider {
   padding-top: 2rem;
   padding-bottom: 2rem;
-  gap: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
   max-width: 100%;
 }
 
-/* Playground page */
+/* Hero */
+.hero-video {
+  position: relative;
+  width: 100%;
+  border-radius: 3px;
+  overflow: hidden;
+  background: #a8c8e8;
+  margin-bottom: 1.5rem;
+  margin-top: 2rem;
+  height: 320px;
+}
+
+#cloud-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.hero-glass-overlay {
+  position: absolute;
+  font-weight: 800;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.hero-name {
+  font-family: "Alte Haas Grotesk", sans-serif;
+  font-size: 5rem;
+  color: #1a1a1a;
+  padding-bottom: 0;
+  max-width: none;
+  letter-spacing: 0.1em;
+}
+
+.hero-bottom {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.hero-bio {
+  max-width: 90%;
+  padding-bottom: 0;
+}
+
+.hero-study {
+  max-width: 90%;
+  padding-bottom: 0;
+  padding-left: 3rem;
+  text-align: right;
+}
+
+@media (max-width: 700px) {
+  .hero-bottom {
+    grid-template-columns: 1fr;  /* stack into single column */
+  }
+
+  .hero-bio,
+  .hero-study {
+    max-width: 100%;
+    text-align: center;
+    padding-left: 0;
+  }
+
+  .hero-dots {
+      display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+}
+
+/* Hero dots */
+.hero-dots {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+}
+
+.hero-dot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  text-decoration: none;
+  color: #1a1a1a;
+}
+
+.dot-shape {
+  display: inline-block;
+  font-size: 2rem;
+  transition: transform 0.3s ease;
+}
+
+.dot-label {
+  font-family: "DM Mono", monospace;
+  font-size: 0.75rem;
+  font-style: italic;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.hero-dot:hover .dot-shape {
+  transform: rotate(-45deg);
+}
+
+.hero-dot:hover .dot-label {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Work list */
+.work-list {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+.work-item {
+  display: block;
+  text-decoration: none;
+  color: #1a1a1a;
+}
+
+.work-thumbnail {
+  width: 100%;
+  border-radius: 3px;
+  overflow: hidden;
+  background-color: #d9d9d9;
+  position: relative; /* 👈 needed for overlay positioning */
+}
+
+.work-thumbnail img {
+  width: 100%;
+  display: block;
+  border-radius: 3px;
+  transition: opacity 0.3s ease;
+}
+
+.work-overlay {
+  position: absolute;
+  inset: 0; /* covers the full thumbnail */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 3px;
+}
+
+.work-overlay p {
+  color: black;
+  font-weight: 800;
+  padding-bottom: 0;
+  max-width: none;
+}
+
+.work-item:hover .work-overlay {
+  opacity: 1;
+}
+
+/* remove the old image dim on hover */
+.work-item:hover .work-thumbnail img {
+  opacity: 1;
+}
+
+.work-info-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.work-description {
+  font-family: "DM Mono", monospace;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  max-width: 70%;
+  padding-bottom: 0;
+}
+
+.work-date {
+  padding-bottom: 0;
+}
+
+.work-tags {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-top: -0.75rem;
+}
+
+.work-tags p {
+  padding-bottom: 0;
+  max-width: none;
+  color: black;
+}
+
+.tag-dot {
+  font-size: 2rem;
+  color: black;
+  line-height: 1;
+}
+
+/* Playground grid */
 .grid {
   columns: 3;
   column-gap: 1rem;
@@ -72,7 +301,7 @@ p {
 }
 
 .grid-item {
-  break-inside: avoid; /* prevents an item from splitting across columns */
+  break-inside: avoid;
   margin-bottom: 1rem;
 }
 
@@ -80,7 +309,7 @@ p {
   width: 100%;
   display: block;
   border-radius: 3px;
-  background-color: #d9d9d9; /* placeholder color while image loads */
+  background-color: #d9d9d9;
 }
 
 .grid-item video {
@@ -104,4 +333,34 @@ p {
   .grid {
     columns: 1;
   }
+}
+
+.grid-link {
+  position: relative;
+  display: block;
+}
+
+.grid-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 3px;
+}
+
+.grid-overlay p {
+  color: #1a1a1a;
+  padding-bottom: 0;
+  max-width: none;
+  font-weight: 800;
+}
+
+.grid-link:hover .grid-overlay {
+  opacity: 1;
 }

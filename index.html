@@ -3,13 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Olivia's Portfolio</title>
+    <title>Olivia Blackmore</title>
     <link rel="stylesheet" href="nav/nav.css" />
     <link rel="stylesheet" href="footer/footer.css" />
     <link rel="stylesheet" href="style.css" />
     <script src="nav/nav.js" defer></script>
     <script src="footer/footer.js" defer></script>
-    <link rel="icon" type="image/x-icon" href="images/favicon.png">
+    <link rel="icon" type="image/x-icon" href="images/favicon.png" />
   </head>
 
   <body>
@@ -17,43 +17,208 @@
 
     <main class="page-content">
 
+      <div class="hero-video">
+        <canvas id="cloud-canvas"></canvas>
+        <div class="hero-glass-overlay">
+          <p>[ Olivia Blackmore ]</p>
+        </div>
+      </div>
 
-      <h1>Hi, this portfolio is currently under construction... reboot time!</h1>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <p>come back soon or take a peak at whats here rn</p>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <p class="highlight">also why are you here, i dont have this linked anywhere.</p>
-            <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
+      <div class="hero-bottom">
+        <p class="hero-bio">
+          A UI/UX designer crafting experiences where
+          <strong>visual storytelling</strong> and
+          <strong>functional design</strong> meet.
+        </p>
+        <div class="hero-dots">
+          <a href="omb5@sfu.ca" class="hero-dot">
+            <span class="dot-shape">▪</span>
+            <span class="dot-label">Email</span>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/olivia--blackmore"
+            target="_blank"
+            class="hero-dot"
+          >
+            <span class="dot-shape">▪</span>
+            <span class="dot-label">LinkedIn</span>
+          </a>
+                    <a
+            href=""
+            target="_blank"
+            class="hero-dot"
+          >
+            <span class="dot-shape">▪</span>
+            <span class="dot-label">Resume</span>
+          </a>
+        </div>
+        <p class="hero-study">
+          Learning to understand people & design at SFU's School of Interactive Arts & Technology.
+        </p>
+      </div>
 
-      <!-- <h1>Hi, I'm Olivia.</h1>
-      <p>
-        Olivia Blackmore is a UI/UX designer crafting experiences where visual
-        storytelling and functional design meet.
-      </p>
-      <p>
-        Currently studying at SFU's School of Interactive Arts & Technology.
-      </p>
-      <br> -->
+      <div class="work-list">
+        <a href="" class="work-item">
+          <div class="work-thumbnail">
+            <img
+              src="images/scrapbooks cover.png"
+              alt="Apple Maps ScrapBooks"
+            />
+            <div class="work-overlay">
+              <p>[ Coming Soon ]</p>
+            </div>
+          </div>
+          <div class="work-info">
+            <div class="work-info-top">
+              <h2>
+                Integrating creation into navigation, to anchor memories to
+                human journeys.
+              </h2>
+              <span class="highlight">05/2026</span>
+            </div>
+            <div class="work-tags">
+              <p>USER JOURNEY</p>
+              <span class="tag-dot">▪</span>
+              <p>UX RESEARCH</p>
+              <span class="tag-dot">▪</span>
+              <p>MOTION GRAPHICS</p>
+            </div>
+          </div>
+        </a>
+
+        <a href="" class="work-item">
+          <div class="work-thumbnail">
+            <img src="images/ssfb cover.png" alt="Strange Sounds From Beyond" />
+            <div class="work-overlay">
+              <p>[ Coming Soon ]</p>
+            </div>
+          </div>
+          <div class="work-info">
+            <div class="work-info-top">
+              <h2>
+                An artist focused experimental festival identity and digital
+                experience.
+              </h2>
+              <span class="highlight">04/2026</span>
+            </div>
+            <div class="work-tags">
+              <p>VISUAL DESIGN</p>
+              <span class="tag-dot">▪</span>
+              <p>BRANDING</p>
+              <span class="tag-dot">▪</span>
+              <p>UI/UX</p>
+            </div>
+          </div>
+        </a>
+
+        <a href="" class="work-item">
+          <div class="work-thumbnail">
+            <img src="images/ghhk cover.png" alt="GHHK Cover" />
+            <div class="work-overlay">
+              <p>[ Coming Soon ]</p>
+            </div>
+          </div>
+          <div class="work-info">
+            <div class="work-info-top">
+              <h2>Commemorative visual design for a 35th year anniversary.</h2>
+              <span class="highlight">06/2025</span>
+            </div>
+            <div class="work-tags">
+              <p>VISUAL DESIGN</p>
+              <span class="tag-dot">▪</span>
+              <p>STORYTELLING</p>
+            </div>
+          </div>
+        </a>
+      </div>
     </main>
 
-    <script src="/nav.js"></script>
-
     <site-footer></site-footer>
+
+    <script>
+      const img = new Image();
+      img.src = "images/favicon.png";
+      img.onload = () => {
+        const canvas = document.createElement("canvas");
+        canvas.width = 32;
+        canvas.height = 32;
+        canvas.getContext("2d").drawImage(img, 0, 0, 32, 32);
+        const dataURL = canvas.toDataURL("image/png");
+        document.body.style.cursor = `url(${dataURL}) 16 16, auto`;
+      };
+    </script>
+
+    <script>
+      const canvas = document.getElementById('cloud-canvas');
+      const ctx = canvas.getContext('2d');
+
+      let mouse = { x: 0, y: 0 };
+      let width, height;
+
+      const clouds = Array.from({ length: 12 }, (_, i) => ({
+        x: Math.random() * 1200,
+        y: Math.random() * 420,
+        radius: 60 + Math.random() * 100,
+        speedX: (Math.random() - 0.5) * 0.3,
+        speedY: (Math.random() - 0.5) * 0.1,
+        opacity: 0.4 + Math.random() * 0.4,
+        hue: Math.random() > 0.5 ? '#ffffff' : '#d6eaf8',
+      }));
+
+      function resize() {
+        width = canvas.offsetWidth;
+        height = canvas.offsetHeight;
+        canvas.width = width;
+        canvas.height = height;
+      }
+
+      window.addEventListener('resize', resize);
+      resize();
+
+      canvas.parentElement.addEventListener('mousemove', e => {
+        const rect = canvas.getBoundingClientRect();
+        mouse.x = e.clientX - rect.left;
+        mouse.y = e.clientY - rect.top;
+      });
+
+      function draw() {
+        // sky gradient background
+        const gradient = ctx.createLinearGradient(0, 0, 0, height);
+        gradient.addColorStop(0, '#b8d4e8');
+        gradient.addColorStop(1, '#ddeeff');
+        ctx.fillStyle = gradient;
+        ctx.fillRect(0, 0, width, height);
+
+        clouds.forEach(cloud => {
+          // drift toward mouse gently
+          const dx = mouse.x - cloud.x;
+          const dy = mouse.y - cloud.y;
+          cloud.x += dx * 0.0015 + cloud.speedX;
+          cloud.y += dy * 0.0008 + cloud.speedY;
+
+          // wrap around edges
+          if (cloud.x > width + cloud.radius) cloud.x = -cloud.radius;
+          if (cloud.x < -cloud.radius) cloud.x = width + cloud.radius;
+          if (cloud.y > height + cloud.radius) cloud.y = -cloud.radius;
+          if (cloud.y < -cloud.radius) cloud.y = height + cloud.radius;
+
+          // draw cloud blob
+          const grad = ctx.createRadialGradient(
+            cloud.x, cloud.y, 0,
+            cloud.x, cloud.y, cloud.radius
+          );
+          grad.addColorStop(0, `rgba(255,255,255,${cloud.opacity})`);
+          grad.addColorStop(1, `rgba(255,255,255,0)`);
+          ctx.beginPath();
+          ctx.arc(cloud.x, cloud.y, cloud.radius, 0, Math.PI * 2);
+          ctx.fillStyle = grad;
+          ctx.fill();
+        });
+
+        requestAnimationFrame(draw);
+      }
+
+      draw();
+    </script>
   </body>
 </html>
