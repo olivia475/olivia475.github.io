@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="style.css" />
     <script src="nav/nav.js" defer></script>
     <script src="footer/footer.js" defer></script>
-    <link rel="icon" type="image/x-icon" href="images/favicon.png" />
   </head>
 
   <body>
@@ -54,14 +53,14 @@
       </div>
 
       <div class="work-list">
-        <a href="" class="work-item">
+        <a href="scrapbooks.html" class="work-item">
           <div class="work-thumbnail">
             <img
               src="images/scrapbooks cover.png"
               alt="Apple Maps ScrapBooks"
             />
             <div class="work-overlay">
-              <p>[ Coming Soon ]</p>
+              <p>[ Learn More ]</p>
             </div>
           </div>
           <div class="work-info">
@@ -132,19 +131,6 @@
     </main>
 
     <site-footer></site-footer>
-
-    <script>
-      const img = new Image();
-      img.src = "images/favicon.png";
-      img.onload = () => {
-        const canvas = document.createElement("canvas");
-        canvas.width = 32;
-        canvas.height = 32;
-        canvas.getContext("2d").drawImage(img, 0, 0, 32, 32);
-        const dataURL = canvas.toDataURL("image/png");
-        document.body.style.cursor = `url(${dataURL}) 16 16, auto`;
-      };
-    </script>
 
     <script>
       const canvas = document.getElementById("cloud-canvas");
