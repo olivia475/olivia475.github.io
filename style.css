@@ -206,6 +206,13 @@ p {
   transform: translateY(0);
 }
 
+@media (max-width: 480px) {
+  .dot-label {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Work list */
 .work-list {
   display: flex;
@@ -447,10 +454,17 @@ p {
   gap: 3rem 2rem;
   align-items: center;
   justify-items: start; /* default */
+  margin-top: 4rem;
 }
 
 .experience-grid .inline-logo {
   justify-self: center;
+}
+
+@media (max-width: 800px) {
+  .about-layout {
+    grid-template-columns: 1fr;
+  }
 }
 
 
