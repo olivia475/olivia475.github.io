@@ -65,3 +65,42 @@
     grid-template-columns: 1fr;
   }
 }
+
+
+
+/* hover state */
+.gallery-link {
+  position: relative;
+  display: block;
+}
+
+.gallery-link img {
+  width: 100%;
+  display: block;
+  border-radius: 3px;
+}
+
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 3px;
+}
+
+.gallery-overlay p {
+  color: black;
+  font-weight: 800;
+  padding-bottom: 0;
+  max-width: none;
+}
+
+.gallery-link:hover .gallery-overlay {
+  opacity: 1;
+}
