@@ -401,7 +401,7 @@ p {
 .about-dots {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 1rem;
   padding-top: 2rem;
   position: sticky; /* keeps dots visible as you scroll */
   top: 80px;
@@ -439,6 +439,18 @@ p {
 }
 
 .about-dot-item:hover .about-dot-image {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.about-dot-item .highlight {
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  padding-bottom: 0;
+}
+
+.about-dot-item:hover .highlight {
   opacity: 1;
   transform: translateY(0);
 }
