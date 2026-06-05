@@ -294,6 +294,10 @@ p {
   h2 {
     font-size: 1.15rem;
   }
+
+  .work-info-top .highlight {
+    margin-bottom: 1.5rem;
+  }
 }
 
 /* remove the old image dim on hover */
