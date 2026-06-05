@@ -14,7 +14,7 @@ class SiteNav extends HTMLElement {
           <li><a href="index.html" class="nav-link">Work</a></li>
           <li><a href="play.html" class="nav-link">Play</a></li>
           <li><a href="about.html" class="nav-link">About</a></li>
-          <li><a href="resume.html" class="nav-link">Resume</a></li>
+          <li><a href="Resume2026OB.pdf" class="nav-link">Resume</a></li>
         </ul>
       </nav>
     `;

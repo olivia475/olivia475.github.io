@@ -7,9 +7,9 @@ class SiteFooter extends HTMLElement {
           <p class="footer-muted">Last Updated May 2026</p>
         </div>
         <div class="footer-right">
-          <a href="https://www.linkedin.com/in/olivia--blackmore" class="footer-link" target="_blank">LinkedIn ›</a>
-          <a href="mailto:omb5@sfu.ca" class="footer-link">Email ›</a>
-          <a href="resume.html" class="footer-link">Resume ›</a>
+          <a href="https://www.linkedin.com/in/olivia--blackmore" class="footer-link" target="_blank">LinkedIn ></a>
+          <a href="mailto:omb5@sfu.ca" class="footer-link">Email ></a>
+          <a href="Resume2026OB.pdf" class="footer-link" target="_blank">Resume ></a>
         </div>
       </footer>
     `;
