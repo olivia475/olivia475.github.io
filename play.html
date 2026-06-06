@@ -19,12 +19,13 @@
         A gallery of miscelaneous side projects & experiments. This is where the
         learning & growth happens :p
       </p>
-      <br>
+      <br />
 
       <div class="filter-buttons">
         <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="motion">Motion</button>
+        <button class="filter-btn" data-filter="ui">UI</button>
         <button class="filter-btn" data-filter="graphic">Graphic</button>
+        <button class="filter-btn" data-filter="motion">Motion</button>
         <button class="filter-btn" data-filter="illustration">
           Illustration
         </button>
@@ -39,25 +40,22 @@
           </div>
         </div>
 
+        <div class="grid-item" data-category="motion">
+          <img
+            src="images/BP-LINKEDIN-GIF copy.gif"
+            alt="LinkedIn Announcement GIF"
+          />
+          <div class="grid-caption">
+            <p>LinkedIn Announcement</p>
+            <p class="highlight">03/2026</p>
+          </div>
+        </div>
+
         <div class="grid-item" data-category="graphic">
           <img src="images/UPhoto-DeerLake.png" alt="Robo Ad" />
           <div class="grid-caption">
             <p>Event Post [SFU UPhoto]</p>
             <p class="highlight">05/2026</p>
-          </div>
-        </div>
-
-        <div class="grid-item" data-category="motion">
-          <video
-            src="videos/Matcha-Email-Signature copy.mp4"
-            autoplay
-            loop
-            muted
-            playsinline
-          ></video>
-          <div class="grid-caption">
-            <p>Email Signature</p>
-            <p class="highlight">09/2025</p>
           </div>
         </div>
 
@@ -88,11 +86,63 @@
           </div>
         </div>
 
+        <div class="grid-item" data-category="motion">
+          <a
+            href="https://youtu.be/j9tuckrEe_0"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="grid-link"
+          >
+            <video
+              src="videos/iat100.mp4"
+              autoplay
+              loop
+              muted
+              playsinline
+            ></video>
+            <div class="grid-overlay"><p>[ Watch ]</p></div>
+          </a>
+          <div class="grid-caption">
+            <p>Typography Practice :)</p>
+            <p class="highlight">09/2024</p>
+          </div>
+        </div>
+
+        <div class="grid-item" data-category="motion">
+          <a
+            href="https://youtu.be/yfdJd9OxjlA"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="grid-link"
+          >
+            <video
+              src="videos/iat100-final.mov"
+              autoplay
+              loop
+              muted
+              playsinline
+            ></video>
+            <div class="grid-overlay"><p>[ Watch ]</p></div>
+          </a>
+          <div class="grid-caption">
+            <p>HOOLIGANG</p>
+            <p class="highlight">10/2024</p>
+          </div>
+        </div>
+
         <div class="grid-item" data-category="graphic">
           <img src="images/Runner-April23.png" alt="Runner [13/28]" />
           <div class="grid-caption">
             <p>Runner [13/28]</p>
             <p class="highlight">02/2026</p>
+          </div>
+        </div>
+
+        <div class="grid-item" data-category="graphic">
+          <img src="images/Vinateg-Postacrds.jpeg" alt="Menu Postcard" />
+          <div class="grid-caption">
+            <p>Menu Postcard</p>
+            <p class="highlight">07/2025</p>
           </div>
         </div>
 
@@ -118,11 +168,25 @@
           </div>
         </div>
 
-        <div class="grid-item" data-category="graphic">
-          <img src="images/Vinateg-Postacrds.jpeg" alt="Menu Postcard" />
+        <div class="grid-item" data-category="ui">
+          <a
+            href="https://www.figma.com/proto/K4u1O2IHfNMiVigajXsTWR/FLUI-DESIGN?node-id=377-1196&viewport=2692%2C-6929%2C0.3&t=YH79H606qyaapnoV-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=377%3A1196&page-id=291%3A891"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="grid-link"
+          >
+            <video
+              src="videos/flui2026.mp4"
+              autoplay
+              loop
+              muted
+              playsinline
+            ></video>
+            <div class="grid-overlay"><p>[ View Prototype ]</p></div>
+          </a>
           <div class="grid-caption">
-            <p>Menu Postcard</p>
-            <p class="highlight">07/2025</p>
+            <p>OutForm Ceramics [FLUI2026]</p>
+            <p class="highlight">03/2026</p>
           </div>
         </div>
 
@@ -141,13 +205,16 @@
         </div>
 
         <div class="grid-item" data-category="motion">
-          <img
-            src="images/BP-LINKEDIN-GIF copy.gif"
-            alt="LinkedIn Announcement GIF"
-          />
+          <video
+            src="videos/Matcha-Email-Signature copy.mp4"
+            autoplay
+            loop
+            muted
+            playsinline
+          ></video>
           <div class="grid-caption">
-            <p>LinkedIn Announcement</p>
-            <p class="highlight">03/2026</p>
+            <p>Email Signature</p>
+            <p class="highlight">09/2025</p>
           </div>
         </div>
 
@@ -188,9 +255,12 @@
           btns.forEach((b) => b.classList.remove("active"));
           btn.classList.add("active");
           const filter = btn.dataset.filter;
-          items.forEach(item => {
-            const categories = item.dataset.category.split(' ');
-            item.style.display = (filter === 'all' || categories.includes(filter)) ? 'block' : 'none';
+          items.forEach((item) => {
+            const categories = item.dataset.category.split(" ");
+            item.style.display =
+              filter === "all" || categories.includes(filter)
+                ? "block"
+                : "none";
           });
         });
       });
