@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css" />
     <script src="nav/nav.js" defer></script>
     <script src="footer/footer.js" defer></script>
-        <link rel="icon" type="image/x-icon" href="images/favicon.png" />
+    <link rel="icon" type="image/x-icon" href="images/favicon.png" />
   </head>
   <body>
     <site-nav></site-nav>
@@ -19,10 +19,19 @@
         A gallery of miscelaneous side projects & experiments. This is where the
         learning & growth happens :p
       </p>
-      <br />
+      <br>
+
+      <div class="filter-buttons">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="motion">Motion</button>
+        <button class="filter-btn" data-filter="graphic">Graphic</button>
+        <button class="filter-btn" data-filter="illustration">
+          Illustration
+        </button>
+      </div>
 
       <div class="grid">
-        <div class="grid-item">
+        <div class="grid-item" data-category="graphic illustration">
           <img src="images/robo-ad2.png" alt="Robo Ad" />
           <div class="grid-caption">
             <p>Newspaper [The PEAK] Spoof Ad</p>
@@ -30,7 +39,7 @@
           </div>
         </div>
 
-        <div class="grid-item">
+        <div class="grid-item" data-category="graphic">
           <img src="images/UPhoto-DeerLake.png" alt="Robo Ad" />
           <div class="grid-caption">
             <p>Event Post [SFU UPhoto]</p>
@@ -38,7 +47,7 @@
           </div>
         </div>
 
-        <div class="grid-item">
+        <div class="grid-item" data-category="motion">
           <video
             src="videos/Matcha-Email-Signature copy.mp4"
             autoplay
@@ -52,17 +61,15 @@
           </div>
         </div>
 
-        <div class="grid-item">
+        <div class="grid-item" data-category="illustration">
           <a
             href="https://issuu.com/peaksfu/docs/the_creatives_behind_the_lyre_16"
             target="_blank"
             rel="noopener noreferrer"
             class="grid-link"
           >
-            <img src="images/peak cover 1.jpeg" alt="PEAK Cover [Valentines]" />
-            <div class="grid-overlay">
-              <p>[ Read article ]</p>
-            </div>
+            <img src="images/peak cover 1.jpeg" alt="PEAK Cover [The Lyre]" />
+            <div class="grid-overlay"><p>[ Read article ]</p></div>
           </a>
           <div class="grid-caption">
             <p>Newspaper [The PEAK] Cover Art [The Lyre]</p>
@@ -70,7 +77,7 @@
           </div>
         </div>
 
-        <div class="grid-item">
+        <div class="grid-item" data-category="graphic">
           <img
             src="images/backyard.png"
             alt="Playlist Cover [UBC Figma Event]"
@@ -81,7 +88,7 @@
           </div>
         </div>
 
-        <div class="grid-item">
+        <div class="grid-item" data-category="graphic">
           <img src="images/Runner-April23.png" alt="Runner [13/28]" />
           <div class="grid-caption">
             <p>Runner [13/28]</p>
@@ -89,7 +96,7 @@
           </div>
         </div>
 
-        <div class="grid-item">
+        <div class="grid-item" data-category="graphic">
           <img src="images/Carrnot-Apr17.png" alt="Carrot/Carrnot [7/28]" />
           <div class="grid-caption">
             <p>Carrot/Carrnot [7/28]</p>
@@ -97,7 +104,7 @@
           </div>
         </div>
 
-        <div class="grid-item">
+        <div class="grid-item" data-category="motion">
           <video
             src="videos/Powders 2 copy.mp4"
             autoplay
@@ -111,7 +118,7 @@
           </div>
         </div>
 
-        <div class="grid-item">
+        <div class="grid-item" data-category="graphic">
           <img src="images/Vinateg-Postacrds.jpeg" alt="Menu Postcard" />
           <div class="grid-caption">
             <p>Menu Postcard</p>
@@ -119,7 +126,7 @@
           </div>
         </div>
 
-        <div class="grid-item">
+        <div class="grid-item" data-category="motion">
           <video
             src="videos/OysterWorld copy.mp4"
             autoplay
@@ -133,7 +140,7 @@
           </div>
         </div>
 
-        <div class="grid-item">
+        <div class="grid-item" data-category="motion">
           <img
             src="images/BP-LINKEDIN-GIF copy.gif"
             alt="LinkedIn Announcement GIF"
@@ -144,7 +151,7 @@
           </div>
         </div>
 
-        <div class="grid-item">
+        <div class="grid-item" data-category="illustration">
           <a
             href="https://issuu.com/peaksfu/docs/the_creatives_behind_the_lyre_16"
             target="_blank"
@@ -152,9 +159,7 @@
             class="grid-link"
           >
             <img src="images/peak cover 2.jpeg" alt="PEAK Cover [Valentines]" />
-            <div class="grid-overlay">
-              <p>[ Read article ]</p>
-            </div>
+            <div class="grid-overlay"><p>[ Read article ]</p></div>
           </a>
           <div class="grid-caption">
             <p>Newspaper [The PEAK] Cover Art [Valentines]</p>
@@ -162,7 +167,7 @@
           </div>
         </div>
 
-        <div class="grid-item">
+        <div class="grid-item" data-category="graphic">
           <img src="images/StawamusChief-April24.png" alt="Chief [14/28]" />
           <div class="grid-caption">
             <p>Chief [14/28]</p>
@@ -173,5 +178,22 @@
     </main>
 
     <site-footer></site-footer>
+
+    <script>
+      const btns = document.querySelectorAll(".filter-btn");
+      const items = document.querySelectorAll(".grid-item");
+
+      btns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          btns.forEach((b) => b.classList.remove("active"));
+          btn.classList.add("active");
+          const filter = btn.dataset.filter;
+          items.forEach(item => {
+            const categories = item.dataset.category.split(' ');
+            item.style.display = (filter === 'all' || categories.includes(filter)) ? 'block' : 'none';
+          });
+        });
+      });
+    </script>
   </body>
 </html>
