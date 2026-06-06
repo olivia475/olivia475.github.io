@@ -268,39 +268,6 @@ p {
   opacity: 1;
 }
 
-@media (max-width: 600px) {
-  .work-info-top {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.25rem;
-  }
-
-  .work-tags {
-    flex-wrap: wrap;
-    column-gap: 0.5rem;
-    row-gap: 0 !important;
-  }
-
-  .tag-dot {
-    font-size: 0.8rem;
-    line-height: 1;
-  }
-
-  .work-tags p {
-    line-height: 1;
-    padding-bottom: 0;
-  }
-
-  h2 {
-    font-size: 1.15rem;
-  }
-
-  .work-info-top .highlight {
-    margin-bottom: 1.5rem;
-  }
-}
-
-/* remove the old image dim on hover */
 .work-item:hover .work-thumbnail img {
   opacity: 1;
 }
@@ -340,6 +307,31 @@ p {
   font-size: 2rem;
   color: black;
   line-height: 1;
+}
+
+@media (max-width: 600px) {
+  .work-info-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+
+  .work-tags {
+    display: none;
+  }
+
+  .tag-dot {
+    font-size: 0.8rem;
+    line-height: 1;
+  }
+
+  h2 {
+    font-size: 1.15rem;
+  }
+
+  .work-info-top .highlight {
+    margin-bottom: 1.5rem;
+  }
 }
 
 /* Playground grid */
@@ -431,7 +423,9 @@ p {
   border: 1px solid #dddddd;
   border-radius: 2px;
   padding: 0.5rem 1rem;
-  transition: color 0.5s ease, border-color 0.5s ease;
+  transition:
+    color 0.5s ease,
+    border-color 0.5s ease;
 }
 
 .filter-btn:hover {
@@ -443,7 +437,6 @@ p {
   color: #1a1a1a;
   border-color: #1a1a1a;
 }
-
 
 /* about */
 
@@ -510,7 +503,9 @@ p {
 .about-dot-item .highlight {
   opacity: 0;
   transform: translateY(-4px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
   padding-bottom: 0;
 }
 
@@ -548,7 +543,3 @@ p {
     grid-template-columns: 1fr;
   }
 }
-
-
-
-
