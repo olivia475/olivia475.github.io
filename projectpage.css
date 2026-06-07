@@ -104,3 +104,29 @@
 .gallery-link:hover .gallery-overlay {
   opacity: 1;
 }
+
+
+
+/* MP4/MOV video */
+.video-frame {
+  background-color: #D8E4E8; /* swap for whatever colour you want */
+  border-radius: 8px;
+  padding: 0; /* more padding on sides/top, less on bottom to account for caption space */
+  margin-top: 1rem;
+}
+
+.video-frame video {
+  width: 100%;
+  display: block;
+  border-radius: 4px;
+}
+
+
+
+/* img full width */
+.img-full {
+  width: 100%;
+  display: block;
+  margin-top: 1rem;
+}
+

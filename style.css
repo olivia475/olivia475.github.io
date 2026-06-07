@@ -42,8 +42,23 @@ h1 {
 
 h2 {
   font-family: "Alte Haas Grotesk", sans-serif;
+  font-size: 2rem;
+  color: #1a1a1a;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-family: "Alte Haas Grotesk", sans-serif;
   font-size: 1.5rem;
   color: #1a1a1a;
+}
+
+h4 {
+  font-family: "DM Mono", monospace;
+  font-weight: 500;
+  color: #aaaaaa;
+  font-size: 0.8rem;
 }
 
 p {
@@ -54,6 +69,20 @@ p {
   color: #1a1a1a;
   max-width: 50rem;
   line-height: 1.5;
+}
+
+section p {
+  font-family: "Neue Haas Grotesque", sans-serif;
+  margin: 0;
+  padding-bottom: 1rem;
+  font-size: 1rem;
+  color: #1a1a1a;
+  max-width: 50rem;
+  /* line-height: 1.5; */
+}
+
+section {
+  padding-top: 6rem;
 }
 
 .highlight {
@@ -325,7 +354,7 @@ p {
     line-height: 1;
   }
 
-  h2 {
+  h3 {
     font-size: 1.15rem;
   }
 
@@ -439,7 +468,6 @@ p {
 }
 
 /* about */
-
 .about-layout {
   display: grid;
   grid-template-columns: 1fr auto;
@@ -521,7 +549,7 @@ p {
 }
 
 /* about page experience grid */
-.experience-grid h2 {
+.experience-grid h3 {
   margin: 0;
 }
 
