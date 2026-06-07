@@ -30,7 +30,7 @@
           <strong>functional design</strong> meet.
         </p>
         <div class="hero-dots">
-          <a href="omb5@sfu.ca" class="hero-dot">
+          <a href="mailto:omblackmore@gmail.com" class="hero-dot">
             <span class="dot-shape">▪</span>
             <span class="dot-label">Email</span>
           </a>
@@ -53,7 +53,7 @@
         </p>
       </div>
 
-      <div class="work-list">
+      <div class="work-list" id="work">
         <a href="scrapbooks.html" class="work-item">
           <div class="work-thumbnail">
             <img
@@ -70,7 +70,7 @@
                 Integrating creation into navigation, to anchor memories to
                 human journeys.
               </h3>
-              <span class="highlight">05/2026</span> 
+              <span class="highlight">05/2026</span>
             </div>
             <div class="work-tags">
               <p>USER JOURNEY</p>
@@ -109,7 +109,7 @@
           </div>
         </a>
 
-        <a href="eti.html" class="work-item">
+        <!-- <a href="eti.html" class="work-item">
           <div class="work-thumbnail">
             <img src="images/eti cover.png" alt="Eat the Invaders" />
             <div class="work-overlay">
@@ -127,9 +127,9 @@
               <p>PRINT</p>
             </div>
           </div>
-        </a>
+        </a> -->
 
-        <a href="ghhk.html" class="work-item">
+        <!-- <a href="ghhk.html" class="work-item">
           <div class="work-thumbnail">
             <img src="images/ghhk cover.png" alt="GHHK Cover" />
             <div class="work-overlay">
@@ -149,87 +149,99 @@
               <p>PRINT</p>
             </div>
           </div>
-        </a>
+        </a> -->
+      </div>
+
+      <div class="hero-video">
+        <canvas id="cloud-canvas-2"></canvas>
+        <div class="hero-glass-overlay">
+          <p style="text-align: center; font-weight: 500;">if you move your mouse around,<br><span style="font-weight: bold;">mr. cloud</span> will follow :p<br><br>& if you want to connect,<br><a href="mailto:omblackmore@gmail.com" style="text-decoration: underline; color: black;"><span style="font-weight: bold; color: black;">omblackmore@gmail.com</span></a></p>
+        </div>
       </div>
     </main>
 
     <site-footer></site-footer>
 
     <script>
-      const canvas = document.getElementById("cloud-canvas");
-      const ctx = canvas.getContext("2d");
+      function initClouds(canvasId) {
+        const canvas = document.getElementById(canvasId);
+        const ctx = canvas.getContext("2d");
 
-      let mouse = { x: 0, y: 0 };
-      let width, height;
+        let mouse = { x: 0, y: 0 };
+        let width = 0;
+        let height = 0;
+        let clouds = [];
 
-      const clouds = Array.from({ length: 12 }, (_, i) => ({
-        x: Math.random() * 1200,
-        y: Math.random() * 420,
-        radius: 60 + Math.random() * 100,
-        speedX: (Math.random() - 0.5) * 0.3,
-        speedY: (Math.random() - 0.5) * 0.1,
-        opacity: 0.4 + Math.random() * 0.4,
-        hue: Math.random() > 0.5 ? "#ffffff" : "#d6eaf8",
-      }));
+        function makeClouds() {
+          clouds = Array.from({ length: 12 }, () => ({
+            x: Math.random() * width,
+            y: Math.random() * height,
+            radius: 60 + Math.random() * 100,
+            speedX: (Math.random() - 0.5) * 0.3,
+            speedY: (Math.random() - 0.5) * 0.1,
+            opacity: 0.4 + Math.random() * 0.4,
+          }));
+        }
 
-      function resize() {
-        width = canvas.offsetWidth;
-        height = canvas.offsetHeight;
-        canvas.width = width;
-        canvas.height = height;
-      }
+        function resize() {
+          width = canvas.parentElement.offsetWidth;
+          height = canvas.parentElement.offsetHeight;
+          canvas.width = width;
+          canvas.height = height;
+          makeClouds();
+        }
 
-      window.addEventListener("resize", resize);
-      resize();
+        new ResizeObserver(() => resize()).observe(canvas.parentElement);
+        resize();
 
-      canvas.parentElement.addEventListener("mousemove", (e) => {
-        const rect = canvas.getBoundingClientRect();
-        mouse.x = e.clientX - rect.left;
-        mouse.y = e.clientY - rect.top;
-      });
-
-      function draw() {
-        // sky gradient background
-        const gradient = ctx.createLinearGradient(0, 0, 0, height);
-        gradient.addColorStop(0, "#b8d4e8");
-        gradient.addColorStop(1, "#ddeeff");
-        ctx.fillStyle = gradient;
-        ctx.fillRect(0, 0, width, height);
-
-        clouds.forEach((cloud) => {
-          // drift toward mouse gently
-          const dx = mouse.x - cloud.x;
-          const dy = mouse.y - cloud.y;
-          cloud.x += dx * 0.0015 + cloud.speedX;
-          cloud.y += dy * 0.0008 + cloud.speedY;
-
-          // wrap around edges
-          if (cloud.x > width + cloud.radius) cloud.x = -cloud.radius;
-          if (cloud.x < -cloud.radius) cloud.x = width + cloud.radius;
-          if (cloud.y > height + cloud.radius) cloud.y = -cloud.radius;
-          if (cloud.y < -cloud.radius) cloud.y = height + cloud.radius;
-
-          // draw cloud blob
-          const grad = ctx.createRadialGradient(
-            cloud.x,
-            cloud.y,
-            0,
-            cloud.x,
-            cloud.y,
-            cloud.radius,
-          );
-          grad.addColorStop(0, `rgba(255,255,255,${cloud.opacity})`);
-          grad.addColorStop(1, `rgba(255,255,255,0)`);
-          ctx.beginPath();
-          ctx.arc(cloud.x, cloud.y, cloud.radius, 0, Math.PI * 2);
-          ctx.fillStyle = grad;
-          ctx.fill();
+        canvas.parentElement.addEventListener("mousemove", (e) => {
+          const rect = canvas.getBoundingClientRect();
+          mouse.x = e.clientX - rect.left;
+          mouse.y = e.clientY - rect.top;
         });
 
-        requestAnimationFrame(draw);
+        function draw() {
+          const gradient = ctx.createLinearGradient(0, 0, 0, height);
+          gradient.addColorStop(0, "#b8d4e8");
+          gradient.addColorStop(1, "#ddeeff");
+          ctx.fillStyle = gradient;
+          ctx.fillRect(0, 0, width, height);
+
+          clouds.forEach((cloud) => {
+            const dx = mouse.x - cloud.x;
+            const dy = mouse.y - cloud.y;
+            cloud.x += dx * 0.0015 + cloud.speedX;
+            cloud.y += dy * 0.0008 + cloud.speedY;
+
+            if (cloud.x > width + cloud.radius) cloud.x = -cloud.radius;
+            if (cloud.x < -cloud.radius) cloud.x = width + cloud.radius;
+            if (cloud.y > height + cloud.radius) cloud.y = -cloud.radius;
+            if (cloud.y < -cloud.radius) cloud.y = height + cloud.radius;
+
+            const grad = ctx.createRadialGradient(
+              cloud.x,
+              cloud.y,
+              0,
+              cloud.x,
+              cloud.y,
+              cloud.radius,
+            );
+            grad.addColorStop(0, `rgba(255,255,255,${cloud.opacity})`);
+            grad.addColorStop(1, `rgba(255,255,255,0)`);
+            ctx.beginPath();
+            ctx.arc(cloud.x, cloud.y, cloud.radius, 0, Math.PI * 2);
+            ctx.fillStyle = grad;
+            ctx.fill();
+          });
+
+          requestAnimationFrame(draw);
+        }
+
+        draw();
       }
 
-      draw();
+      initClouds("cloud-canvas");
+      initClouds("cloud-canvas-2");
     </script>
   </body>
 </html>
