@@ -311,10 +311,31 @@ html {
   opacity: 1;
 }
 
+/* .work-info-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+} */
+
 .work-info-top {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+  gap: 2rem;          
+  width: 100%;
+  margin-bottom: 0.5rem; 
+}
+
+.work-info-top h3 {
+  margin: 0;
+  margin-top: 1rem;
+  margin-bottom: 1rem;         
+  flex: 1;           
+}
+
+.work-info-top .highlight {
+  flex-shrink: 0;     
+  white-space: nowrap;
 }
 
 .work-description {
