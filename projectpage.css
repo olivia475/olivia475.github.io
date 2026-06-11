@@ -1,5 +1,3 @@
-
-
 /* project page hero details */
 .project-meta {
   display: grid;
@@ -28,8 +26,6 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
-
-
 
 /* hero image gallery */
 .project-gallery {
@@ -65,8 +61,6 @@
     grid-template-columns: 1fr;
   }
 }
-
-
 
 /* hover state */
 .gallery-link {
@@ -105,11 +99,9 @@
   opacity: 1;
 }
 
-
-
 /* MP4/MOV video */
 .video-frame {
-  background-color: #D8E4E8; /* swap for whatever colour you want */
+  background-color: #d8e4e8; /* swap for whatever colour you want */
   border-radius: 8px;
   padding: 0; /* more padding on sides/top, less on bottom to account for caption space */
   margin-top: 1rem;
@@ -139,15 +131,12 @@
   border-radius: 4px;
 }
 
-
-
 /* img full width */
 .img-full {
   width: 100%;
   display: block;
   margin-top: 1rem;
 }
-
 
 /* side by side assets */
 .side-by-side {
@@ -187,9 +176,6 @@
   }
 }
 
-
-
-
 .six-sq-img-row {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -210,5 +196,25 @@
 @media (max-width: 600px) {
   .six-sq-img-row {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* three pain points grid */
+.three-grid-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.three-grid-row p {
+  background-color: rgba(237, 237, 237);
+  border-radius: 0.25rem;
+  padding: 3rem;
+}
+
+@media (max-width: 600px) {
+  .three-grid-row {
+    grid-template-columns: 1fr;
   }
 }
