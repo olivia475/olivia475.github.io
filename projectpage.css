@@ -21,10 +21,6 @@
   padding-bottom: 0;
 }
 
-h4 {
-  padding-bottom: 0.5rem;
-}
-
 @media (max-width: 600px) {
   .project-meta {
     grid-template-columns: repeat(2, 1fr);
