@@ -76,7 +76,7 @@
             target="_blank"
             class="gallery-link"
           >
-            <img src="images/sb-m.png" alt="Flat lay packaging" />
+            <img src="images/sb-m.webp" alt="Flat lay packaging" />
             <div class="gallery-overlay">
               <p>[ View Prototype ]</p>
             </div>
@@ -85,23 +85,32 @@
 
         <div class="gallery-half">
           <img src="images/sb-d.png" alt="Inside panel" />
-          <img src="images/sb-2.png" alt="Product with box open" />
+          <img src="images/sb-2.webp" alt="Product with box open" />
         </div>
       </div>
 
-      <br>
-      <h1 style="text-align: center">come back soon for the full story :)</h1>
+      <!-- <br>
+      <h1 style="text-align: center">come back soon for the full story :)</h1> -->
 
-      <!-- <section id="overview">
+      <section id="overview">
         <h4>OVERVIEW</h4>
         <h2>Designing memory into the map</h2>
         <p>
           Over six days at SparkJam 2026, a design jam with 300+ participants,
           our team of four designed Apple Maps ScrapBooks — a feature that lets
           users build digital scrapbooks of their journeys, anchoring memories
-          to the places they happened. We took home Best Community Centred
+          to the places they happened, allowing us to take home a prize for Best Community Centred
           Project.
         </p>
+        <div class="video-frame">
+          <video
+            src="videos/sb-overview.mp4"
+            autoplay
+            loop
+            muted
+            playsinline
+          ></video>
+        </div>
       </section>
 
       <section id="mission">
@@ -115,29 +124,32 @@
 
       <section id="mission">
         <h4>PROBLEM</h4>
-        <h2>Travelling is messy</h2>
-        <h2>
-          ** make lil gestural drawings for each of these & line them up in a
-          row**
-        </h2>
+        <h2 style="padding-bottom: 1rem;">Travelling is messy</h2>
         <div class="three-grid-row">
-          <p>
-            travellers have to switch between 3-6 apps to plan a single trip.
-            (draw a frustrated head)
-          </p>
-          <p>
-            people forget the context of their memories, with photos being
-            forgotten in their camera rolls. (draw someone forgetting smth? lost
-            camera?)
-          </p>
-          <p>
-            Nothing supports planning, experiencing, and preserving travel in
-            one place, and sharing your journeys with others is a hassle across
-            a bunch of different apps. say smth about the social aspect &
-            connection & collaboration that isnt included in apple maps rn.
-            (draw a bunch of people trying to connect but being separated?
-            community torn apart, too much friction?)
-          </p>
+          <div class="grid-box">
+            <img src="images/sb-problem1.png" alt="lots of app logos" />
+            <br>
+            <p style="text-align: center">
+              Travellers currently switch between 3-6 apps to plan a
+              single trip.
+            </p>
+          </div>
+
+          <div class="grid-box">
+            <img src="images/sb-problem2.png" alt="messy messages" />
+            <p style="text-align: center">
+              Existing navigation tools ignore the social side of travel,
+              making it difficult for travellers to collaborate on trips.
+            </p>
+          </div>
+
+          <div class="grid-box">
+            <img src="images/sb-problem3.png" alt="stack of photographs" />
+            <p style="text-align: center">
+              People forget the context of their memories, leaving photos to
+              be forgotten in their camera rolls.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -145,13 +157,23 @@
         <h4>SOLUTION</h4>
         <h2>Apple Maps ScrapBooks</h2>
         <p>
-          A scrapbook layer built directly into Apple Maps. ScrapBooks lets
-          people collaboratively plan trips, capture memories in real time, and
+          A scrapbook layer built directly into Apple Maps, allowing travellers
+          to collaboratively plan trips, capture memories in real time, and
           revisit journeys through interactive storytelling. This reminds the
           user not just where they travelled, but how it felt to be there.
         </p>
+        <div class="video-frame">
+          <video
+            src="videos/sb-solution.mp4"
+            autoplay
+            loop
+            muted
+            playsinline
+          ></video>
+        </div>
       </section>
 
+      <br>
       <section id="contributions">
         <h4>MY CONTRIBUTIONS</h4>
         <h2>Below are my contributions to the research & design :)</h2>
@@ -159,48 +181,35 @@
 
       <section id="research">
         <h4>RESEARCH</h4>
-        <h2>Surveying Gen Z travellers</h2>
+        <h2>Understanding our users</h2>
         <p>
-          We conducted surveys with 35 potential users, Gen Z travellers, to
-          guide our design decisions.
-        </p>
-        <h2>1</h2>
-        <p>
-          <strong>fragmented trip planning.</strong><br />travellers want a
-          simpler way to plan trips collaboratively. Trip planning is often
-          scattered across platforms, making it overwhelming and difficult to
-          organize.<br /><strong
-            >ScrapBooks brings inspiration, saved locations, and collaborative
-            planning into one shared map-based experience.</strong
-          >
+          We designed a survey for Gen Z travellers, gaining insight from 35 potential users on how they plan trips and manage trip memorabilia. 
         </p>
 
-        <br />
+        <div class="three-grid-row">
+          <div class="grid-box">
+            <h2>Fragmented trip planning</h2>
+              <p>
+                Travellers want a
+                simpler way to plan trips collaboratively. Trip planning is often
+                scattered across platforms, making it overwhelming and difficult to
+                organize.
+              </p>
+          </div>
 
-        <h2>2</h2>
-        <p>
-          <strong>travel memories lose context</strong><br />travellers want to
-          preserve memories in a meaningful way. After a trip, memories become
-          buried in camera rolls and disconnected from places and
-          experiences.<br /><strong
-            >ScrapBooks transforms them into interactive stories by attaching
-            moments and memories directly to the map journey.</strong
-          >
-        </p>
+                  <div class="grid-box">
+            <h2>Scrapbooking requires too much effort.</h2>
+              <p>
+                Travellers want to scrapbook their experiences without the extra effort. Traditional scrapbooking happens after the trip and requires time and organisation that users may no longer have after the trip is over.
+              </p>
+          </div>
 
-        <br />
-
-        <h2>3</h2>
-        <p>
-          <strong>scrapbooking requires too much effort</strong><br />travellers
-          want to scrapbook their experiences without the extra effort.
-          traditional scrapbooking happens after the trip and requires time and
-          organisation that users may no longer have after the trip is over.
-          <br /><strong
-            >ScrapBooks passively builds the scrapbook during the trip through
-            location based prompts and auto-imported photos.</strong
-          >
-        </p>
+        <div class="grid-box">
+            <h2>Travel memories lose context.</h2>
+              <p>
+                Travellers want to preserve memories in a meaningful way. After a trip, memories become buried in camera rolls and disconnected from places and experiences.
+              </p>
+          </div>
       </section>
 
       <section id="key flows">
@@ -219,25 +228,206 @@
 
         <h2>Lo-fi prototyping in Apple's design language</h2>
         <p>
-          I rapidly iterated on lo-fi wireframes following Apple's HIG —
-          typography, materials, and interaction patterns. We chose Apple Maps
-          because ...
+          I rapidly iterated on lo-fi wireframes following Apple's design styling, utilizing their SF Pro typography, materials, and interaction patterns. We chose Apple Maps due to its interconnectivity within iPhones, hypothetically having this connected to teh users camera roll, music, maps, airdrop, contacts would allow for easy access to a variety of digital content. The decision to prototype this on mobile means users have easy access to build scrapbooks on the go, in the car, on a plane, waiting for the bus, or chilling on the beach.
+        </p>
+
+        <br />
+        <br />
+        <br />
+
+        <h2>Simplified ScrapBook Creation Tools</h2>
+        <p>
+          You did the layout and decided on what tools were necessary, could you talk about this process?
+        </p>
+        <img
+          class="img-full"
+          src="images/sb-creationtools.png"
+          alt="creation tool research"
+        />
+
+        <br />
+        <br />
+        <br />
+
+        <h2>Private/Public/friends</h2>
+        <p>
+          Instead of changing ebtween a bunch of apps, users can just explore other peooples scrapbooks to see what adventures different ppl went on and be inspired by those instead of endlesssly scrollig through a bunch of dif. apps. OR you can choose to just keep t private for your viewing only, or share with friends. choose the community you want to share with.
         </p>
       </section>
 
       <section id="decisions">
         <h4>THE PITCH</h4>
-        <h2>Bringing the concept to life</h2>
+        <h2>Research & Inspo</h2>
         <p>
-          With our prototype nearly finished, I led the motion and storytelling
-          for our pitch video. Starting from a rough storyboard (by Sumerah), I
-          animated key interactions in After Effects and voiced the narration. I
-          iterated off the initial storyboard to build a narrative arc that
-          walked judges through the problem, solution, and emotional payoff of
-          ScrapBooks.
+          To stay true to Apple's design language, I studied their product
+          launch videos, learning how they present the products solved problem,
+          introduction of the user, and feature solutions using tight pacing,
+          engaging audio, and continuous motion.
         </p>
-        <p>show sketchs > final assets</p>
-        <p>show inspo videos & research you did</p>
+
+        <div
+          class="side-by-side"
+          style="gap: 0.5rem; margin-top: 0.5rem; padding-top: 0"
+        >
+          <a
+            href="https://youtu.be/URwVV5tTJIA?si=0WS_QE2fnrmIb0TC"
+            target="_blank"
+            class="grid-link"
+            style="flex: 1"
+          >
+            <img
+              class="img-full"
+              src="images/sb-applevideoinspo.png"
+              alt="First"
+              style="border-radius: 0.25rem; width: 100%; display: block"
+            />
+            <div class="grid-overlay">
+              <p>[ Watch ]</p>
+            </div>
+          </a>
+          <a
+            href="https://youtu.be/GriXfu4tL30?si=s6cAGh97VxaW1wDR"
+            target="_blank"
+            class="grid-link"
+            style="flex: 1"
+          >
+            <img
+              class="img-full"
+              src="images/sb-applevideoinspo2.png"
+              alt="Second"
+              style="border-radius: 0.25rem; width: 100%; display: block"
+            />
+            <div class="grid-overlay">
+              <p>[ Watch ]</p>
+            </div>
+          </a>
+        </div>
+
+        <br />
+        <br />
+        <br />
+        <br>
+
+        <h2>Storyboarding</h2>
+        <p>
+          The concept started as a single note: show people spiralling over
+          chaotic trip-planning texts. From there, we storyboarded it into a
+          full narrative arc.
+        </p>
+
+        <div
+          class="side-by-side"
+          style="
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+            padding-top: 0;
+            margin-right: 0.5;
+          "
+        >
+          <img
+            class="img-full"
+            src="images/1..png"
+            alt="First"
+            style="border-radius: 0.25rem"
+          />
+          <img
+            class="img-full"
+            src="images/12.png"
+            alt="Second"
+            style="border-radius: 0.25rem"
+          />
+        </div>
+        <p
+          class="highlight"
+          style="padding-top: 0.5rem; padding-bottom: 0.5rem"
+        >
+          [ Initial storyboard frames 1 & 12 by Sumerah ]
+        </p>
+
+        <div
+          class="side-by-side"
+          style="gap: 0.5rem; margin-top: 0; padding-top: 0; margin-right: 0.5"
+        >
+          <img
+            class="img-full"
+            src="images/pitch-sketch.png"
+            alt="First"
+            style="border-radius: 0.25rem"
+          />
+          <img
+            class="img-full"
+            src="images/pitch-sketch2.png"
+            alt="Second"
+            style="border-radius: 0.25rem"
+          />
+        </div>
+        <p class="highlight" style="padding-top: 0.5rem">
+          [ Key frame sketches by me ]
+        </p>
+
+        <br />
+        <br />
+        <br />
+
+        <h2>Bringing everything together</h2>
+        <p>
+          Scripting the voiceover, layering in sound effects, and refining the
+          typography until everything felt considered and polished.
+        </p>
+
+        <div class="side-by-side" style="gap: 0.5rem">
+          <div class="video-frame">
+            <video
+              src="videos/sb-mapdrawing.mp4"
+              autoplay
+              loop
+              muted
+              playsinline
+            ></video>
+          </div>
+          <img
+            class="img-full"
+            src="images/sb-phonemockup.png"
+            alt="Payment Page Details"
+            style="margin-top: 0; border-radius: 0.25rem"
+          />
+        </div>
+
+        <div class="side-by-side" style="gap: 0.5rem">
+          <img
+            class="img-full"
+            src="images/sb-worldmap.png"
+            alt="Payment Page Details"
+            style="margin-top: 0; border-radius: 0.25rem"
+          />
+          <div class="video-frame">
+            <video
+              src="videos/sb-endscreentext.mp4"
+              autoplay
+              loop
+              muted
+              playsinline
+            ></video>
+          </div>
+        </div>
+
+        <div class="side-by-side" style="gap: 0.5rem">
+          <img
+            class="img-full"
+            src="images/sb-audio.png"
+            alt="Payment Page Details"
+            style="margin-top: 0; border-radius: 0.25rem"
+          />
+          <div class="video-frame">
+            <video
+              src="videos/sb-chaoticscreen.mp4"
+              autoplay
+              loop
+              muted
+              playsinline
+            ></video>
+          </div>
+        </div>
       </section>
 
       <section id="final">
@@ -247,29 +437,21 @@
         <div class="video-frame">
           <div class="vimeo-embed">
             <iframe
-              width="560"
-              height="315"
-              src="https://www.youtube.com/embed/zpwDHJQG9Ig?si=I03gZYfj-evtHqEM"
-              title="YouTube video player"
+              src="https://player.vimeo.com/video/1201283451"
               frameborder="0"
               allow="
-                accelerometer;
                 autoplay;
+                fullscreen;
+                picture-in-picture;
                 clipboard-write;
                 encrypted-media;
-                gyroscope;
-                picture-in-picture;
-                web-share;
               "
-              referrerpolicy="strict-origin-when-cross-origin"
               allowfullscreen
+              title="Apple Maps ScrapBooks Pitch Video"
             ></iframe>
           </div>
         </div>
-        <p
-          class="highlight"
-          style="padding-top: 0.5rem; margin-bottom: 0; padding-bottom: 0.5rem"
-        >
+        <p class="highlight" style="padding-top: 0.5rem">
           [ Voiced & edited by me ]
         </p>
 
@@ -279,7 +461,7 @@
         >
           <img
             class="img-full"
-            src="images/ss-grouppic.png"
+            src="images/ss-grouppic.webp"
             alt="First"
             style="border-radius: 0.25rem"
           />
@@ -291,7 +473,7 @@
           />
         </div>
         <p class="highlight" style="padding-top: 0.5rem">
-          [ 1. Team photo w/ our prizes !!]<br />[ 2. Our exhibition poster ]
+          [ 1. Team photo w/ our prizes !! ]<br />[ 2. Our exhibition poster ]
         </p>
       </section>
 
@@ -306,34 +488,19 @@
           brought different product references and that range helped us move
           quickly without getting stuck.
         </p>
-        <br />
-        <p>Could NOT have done this alone.</p>
-
-        <br />
-        <br />
-        <br />
-
-        <h2>An AI teammate isn't so bad</h2>
-        <p>
-          Early in the process, we used Claude to rapidly iterate on concepts
-          and stress-test ideas. Having an outside perspective (even an AI one)
-          helped us surface tradeoffs we hadn't considered and move through
-          directions faster than debating in circles.
-        </p>
       </section>
 
-      -->
-
       <br />
       <br />
       <br />
       <br />
-
+      <br />
+      <br />
 
       <h4>NEXT PROJECT</h4>
       <a href="ssfb.html" class="work-item">
         <div class="work-thumbnail">
-          <img src="images/ssfb cover.png" alt="Strange Sounds From Beyond" />
+          <img src="images/ssfb cover.webp" alt="Strange Sounds From Beyond" />
           <div class="work-overlay">
             <p>[ Learn More ]</p>
           </div>

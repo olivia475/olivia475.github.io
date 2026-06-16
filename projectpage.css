@@ -199,18 +199,40 @@
   }
 }
 
-/* three pain points grid */
+
+
+
 .three-grid-row {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 0.5rem;
+  gap: 0.5rem; 
+  margin-top: 1rem;
+
+}
+
+.three-grid-row .grid-box {
+  background-color: rgba(237, 237, 237);
+  border-radius: 0.5rem;
+  padding: 2rem; 
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; 
+  text-align: left;
+}
+
+.grid-box h2 {
   margin-top: 0.5rem;
 }
 
-.three-grid-row p {
-  background-color: rgba(237, 237, 237);
-  border-radius: 0.25rem;
-  padding: 3rem;
+.three-grid-row .grid-box img {
+  width: 100%;          
+  max-width: 300px;    
+  height: 190px;        
+  object-fit: contain;  
+  margin-bottom: 2rem; 
+  margin-top: 1rem; 
 }
 
 @media (max-width: 600px) {
