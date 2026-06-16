@@ -207,7 +207,6 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 0.5rem; 
   margin-top: 1rem;
-
 }
 
 .three-grid-row .grid-box {
@@ -238,5 +237,53 @@
 @media (max-width: 600px) {
   .three-grid-row {
     grid-template-columns: 1fr;
+  }
+}
+
+
+
+
+.three-img-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.three-img-grid div {
+  position: relative;
+}
+
+.three-img-grid img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 0.25rem;
+  display: block;
+}
+
+.three-img-grid p {
+  position: absolute;
+  top: 2.5rem;
+  left: 0;
+  right: 0;
+  text-align: center;
+  margin: 0;
+}
+
+@media (max-width: 1000px) {
+  .three-img-grid p {
+    top: 1rem;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .three-img-grid {
+    grid-template-columns: 1fr;
+  }
+  .three-img-grid p {
+    top: 2.5rem;
+    font-size: 1rem;
   }
 }
