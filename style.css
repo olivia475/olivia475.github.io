@@ -286,7 +286,7 @@ html {
 
 .work-overlay {
   position: absolute;
-  inset: 0; /* covers the full thumbnail */
+  inset: 0; 
   display: flex;
   align-items: center;
   justify-content: center;
