@@ -122,7 +122,7 @@
         </h2>
       </section>
 
-      <section id="mission">
+      <section id="problem">
         <h4>PROBLEM</h4>
         <h2 style="padding-bottom: 1rem">Travelling is messy</h2>
         <div class="three-grid-row">
@@ -181,14 +181,19 @@
 
       <section id="research">
         <h4>RESEARCH</h4>
-        <p>To understand our users, we designed a survey for Gen Z travellers, gaining insight from 35 potential users on how they plan trips and manage trip memorabilia. Here are the results.</p>
+        <p>
+          To understand our users, we designed a survey for Gen Z travellers,
+          gaining insight from 35 potential users on how they plan trips and
+          manage trip memorabilia. Here are the results.
+        </p>
 
         <h2>Fragmented trip planning</h2>
         <div class="pain-point">
           <div class="pain-point-box">
             <h4>PAIN POINT 1</h4>
             <p>
-              Trip planning is often scattered across platforms, making it overwhelming and difficult to organize.
+              Trip planning is often scattered across platforms, making it
+              overwhelming and difficult to organize.
             </p>
           </div>
         </div>
@@ -203,7 +208,10 @@
               alt="First"
               style="border-radius: 0.25rem"
             />
-            <p>Majority of users said <strong>"Yes"</strong> when asked if they get overwhelmed by trip planning.</p>
+            <p>
+              Majority of users said <strong>"Yes"</strong> when asked if they
+              get overwhelmed by trip planning.
+            </p>
           </div>
 
           <div>
@@ -213,7 +221,10 @@
               alt="Second"
               style="border-radius: 0.25rem"
             />
-            <p>Travellers use <strong>multiple different apps</strong> to plan a single trip.</p>
+            <p>
+              Travellers use <strong>multiple different apps</strong> to plan a
+              single trip.
+            </p>
           </div>
         </div>
 
@@ -245,7 +256,8 @@
               style="border-radius: 0.25rem"
             />
             <p>
-              Many users confirmed they <strong>wanted</strong> to make a scrapbook after a trip, <strong>but didn't</strong>.
+              Many users confirmed they <strong>wanted</strong> to make a
+              scrapbook after a trip, <strong>but didn't</strong>.
             </p>
           </div>
 
@@ -256,7 +268,10 @@
               alt="Second"
               style="border-radius: 0.25rem"
             />
-            <p>Travellers shared various reasons for not making a scrapbook post-trip.</p>
+            <p>
+              Travellers shared various reasons for not making a scrapbook
+              post-trip.
+            </p>
           </div>
         </div>
 
@@ -276,12 +291,19 @@
           </div>
         </div>
         <div class="img-full-wrapper">
-          <img style="border-radius: 0.25rem; margin-top: 0.5rem;" class="img-full" src="images/pp3.png" alt="Festival Research" />
-          <p>After a trip, captured pictures and videos end up in various places.</p>
+          <img
+            style="border-radius: 0.25rem; margin-top: 0.5rem"
+            class="img-full"
+            src="images/pp3.png"
+            alt="Festival Research"
+          />
+          <p>
+            After a trip, captured pictures and videos end up in various places.
+          </p>
         </div>
       </section>
 
-      <section id="key flows">
+      <section id="decisions">
         <h4>DECISIONS</h4>
         <h2>Utilizing Apple's design language</h2>
         <p>
@@ -367,7 +389,7 @@
         </div>
       </section>
 
-      <section id="decisions">
+      <section id="pitch">
         <h4>THE PITCH</h4>
         <h2>Research & Inspo</h2>
         <p>
@@ -594,7 +616,10 @@
 
         <h2>Stay grounded in research</h2>
         <p>
-          Running a survey before touching Figma meant our three pain points directly dictated our three core features. We never hit a moment of "so what are we actually building?" because the research had already answered that, this kept us moving fast without losing direction. 
+          Running a survey before touching Figma meant our three pain points
+          directly dictated our three core features. We never hit a moment of
+          "so what are we actually building?" because the research had already
+          answered that, this kept us moving fast without losing direction.
         </p>
 
         <br />
@@ -603,7 +628,11 @@
 
         <h2>Constraints sharpen decisions</h2>
         <p>
-          With only six days and a strict brief, there was no time to second-guess directions. Every decision had a filter: does this fit Apple's design language, does it solve the brief, can we build it in time? Having those guardrails made the design process smoother, with our team spending less time debating, & more time building.
+          With only six days and a strict brief, there was no time to
+          second-guess directions. Every decision had a filter: does this fit
+          Apple's design language, does it solve the brief, can we build it in
+          time? Having those guardrails made the design process smoother, with
+          our team spending less time debating, & more time building.
         </p>
       </section>
 
@@ -714,6 +743,67 @@
           if (video.readyState >= 1) matchSideBySideHeight();
           else video.addEventListener("loadedmetadata", matchSideBySideHeight);
         }
+      });
+    </script>
+
+    <div class="section-nav-progress" id="sectionProgress"></div>
+
+    <nav class="section-nav" id="sectionNav" aria-label="Page sections">
+      <a href="#overview">Overview</a>
+      <a href="#mission">Mission</a>
+      <a href="#problem">Problem</a>
+      <a href="#solution">Solution</a>
+      <a href="#research">Research</a>
+      <a href="#decisions">Decisions</a>
+      <a href="#pitch">Pitch</a>
+      <a href="#final">Final</a>
+      <a href="#takeaways">Takeaways</a>
+    </nav>
+
+    <script>
+      const sectionNav = document.getElementById("sectionNav");
+      const sectionProgress = document.getElementById("sectionProgress");
+      const sectionLinks = sectionNav.querySelectorAll("a");
+      const sectionIds = [
+        "overview",
+        "mission",
+        "problem",
+        "solution",
+        "research",
+        "decisions",
+        "pitch",
+        "final",
+        "takeaways",
+      ];
+
+      window.addEventListener("scroll", () => {
+        if (window.innerWidth <= 600) return;
+
+        const scrolled = window.scrollY;
+        const total = document.body.scrollHeight - window.innerHeight;
+        const ratio = total > 0 ? scrolled / total : 0;
+
+        const finalSection = document.getElementById("takeaways");
+        const reachedFinal =
+          finalSection && scrolled >= finalSection.offsetTop - 140;
+
+        const show = scrolled > 200 && !reachedFinal;
+
+        sectionNav.classList.toggle("visible", show);
+        sectionProgress.classList.toggle("visible", show);
+        sectionProgress.style.width = ratio * 100 + "%";
+
+        let current = "";
+        sectionIds.forEach((id) => {
+          const el = document.getElementById(id);
+          if (el && scrolled >= el.offsetTop - 140) current = id;
+        });
+        sectionLinks.forEach((a) => {
+          a.classList.toggle(
+            "active",
+            a.getAttribute("href") === "#" + current,
+          );
+        });
       });
     </script>
   </body>

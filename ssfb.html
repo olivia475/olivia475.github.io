@@ -213,7 +213,7 @@
         <p class="highlight">[ Microsite experimentation ]</p>
       </section>
 
-      <section id="key flows">
+      <section id="keyflows">
         <h4>KEY FLOWS</h4>
         <h2>Exploratory artist discovery</h2>
         <p>
@@ -519,6 +519,65 @@
         } else if (video) {
           video.addEventListener("loadedmetadata", matchSideBySideHeight);
         }
+      });
+    </script>
+
+    <div class="section-nav-progress" id="sectionProgress"></div>
+
+    <nav class="section-nav" id="sectionNav" aria-label="Page sections">
+      <a href="#overview">Overview</a>
+      <a href="#mission">Mission</a>
+      <a href="#solution">Solution</a>
+      <a href="#research">Research</a>
+      <a href="#keyflows">Key Flows</a>
+      <a href="#decisions">Decisions</a>
+      <a href="#final">Final</a>
+      <a href="#takeaways">Takeaways</a>
+    </nav>
+
+    <script>
+      const sectionNav = document.getElementById("sectionNav");
+      const sectionProgress = document.getElementById("sectionProgress");
+      const sectionLinks = sectionNav.querySelectorAll("a");
+      const sectionIds = [
+        "overview",
+        "mission",
+        "solution",
+        "research",
+        "keyflows",
+        "decisions",
+        "final",
+        "takeaways",
+      ];
+
+      window.addEventListener("scroll", () => {
+        if (window.innerWidth <= 600) return;
+
+        const scrolled = window.scrollY;
+        const total = document.body.scrollHeight - window.innerHeight;
+        const ratio = total > 0 ? scrolled / total : 0;
+
+        const finalSection = document.getElementById("takeaways");
+        const reachedFinal =
+          finalSection && scrolled >= finalSection.offsetTop - 140;
+
+        const show = scrolled > 200 && !reachedFinal;
+
+        sectionNav.classList.toggle("visible", show);
+        sectionProgress.classList.toggle("visible", show);
+        sectionProgress.style.width = ratio * 100 + "%";
+
+        let current = "";
+        sectionIds.forEach((id) => {
+          const el = document.getElementById(id);
+          if (el && scrolled >= el.offsetTop - 140) current = id;
+        });
+        sectionLinks.forEach((a) => {
+          a.classList.toggle(
+            "active",
+            a.getAttribute("href") === "#" + current,
+          );
+        });
       });
     </script>
   </body>
