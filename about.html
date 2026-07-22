@@ -22,51 +22,79 @@
             >&nbsp;&nbsp;&nbsp;I'm Olivia,
             <span class="highlight" style="padding-top: 1rem;">[ Designer & Creative ]</span>
           </h1>
-          <p>
+
+          <p style="max-width:40rem;">
             <br>
             <br>
-            I'm a Vancouver-based design student, passionate about crafting experiences that feel human. As a visual and user-centered designer, I aim to bring together storytelling and functionality to serve real purpose; because good design shouldn't just sit pretty, it should mean something to the people using it. 
-          </p>
-          <p>From obsessing over grid layouts to tying together stories between user and product, every step of the process is a chance to create something both beautiful & meaningful <span class="highlight">[ & super freaking cool ]</span>.</p>
+            I'm a Vancouver-based design student whos pretty passionate about building & bringing ideas to life. As a visual and user-centered designer, I want to tell stories through products that not only look pretty, but also prioritize the message being shared AND ensure product functionality. <br><br>  
+            
+            My goal is always to craft experiences that are beautiful & meaningful <span class="highlight">[ or at least super freaking cool ]</span>.</p>
+
+          <h3 style="margin-top: 3rem;">Currently I am . . .</h3>
 
           <div class="experience-grid">
             <img src="images/logos/sfu-logo.png" alt="SFU" class="inline-logo" />
             <h3>Studying Interactive Arts & Tech. <span class="highlight">@ Simon Fraser University</span></h3>
 
-            <img src="images/logos/uphoto-logo.png" alt="UPhoto" class="inline-logo" />
-            <h3>Creating visual graphics <span class="highlight">@ SFU UPhoto</span></h3>
+            <img src="images/logos/tealeaves.png" alt="TEALEAVES" class="inline-logo" />
+            <h3>Designing labels & packaging <span class="highlight">@ TEALEAVES CO.</span></h3>
+
+            <img src="images/logos/fluidesignjam_logo.jpeg" alt="FLUI Design Jam Logo" class="inline-logo" />
+            <h3>Building new visual identity <span class="highlight">@ FLUI Design Jam</span></h3>
 
             <img src="images/logos/bp-logo.svg" alt="Blueprint" class="inline-logo" />
             <h3>Helping out with video communication <span class="highlight">@ SFU Blueprint</span></h3>
 
-            <img src="images/logos/tealeaves.png" alt="TEALEAVES" class="inline-logo" />
-            <h3>Designing labels & packaging <span class="highlight">@ TEALEAVES CO.</span></h3>
-
             <img src="images/logos/images.png" alt="The PEAK" class="inline-logo" />
             <h3>Doodling illustrations <span class="highlight">Commissioned by The PEAK [SFU Newspaper]</span></h3>
+
+            <img src="images/logos/uphoto-logo.png" alt="UPhoto" class="inline-logo" />
+            <h3>Creating visual graphics <span class="highlight">@ SFU UPhoto</span></h3>
           </div>
         </div>
 
         <div class="about-dots">
           <div class="about-dot-item">
-            <span class="about-dot">▪</span>
-            <img src="images/me.webp" alt="Photo 1" class="about-dot-image" />
-            <p class="highlight">[ Just me ]</p>
+            <div class="about-image-wrap">
+              <img src="images/me.webp" alt="Photo 1" class="about-dot-image about-image-front" />
+              <img src="images/me2.JPG" alt="Photo 1 alternate" class="about-dot-image about-image-back" />
+            </div>
+            <p class="highlight caption-front">[ that's me ^ ]</p>
+            <p class="highlight caption-back">[ me again... ]</p>
           </div>
+
           <div class="about-dot-item">
-            <span class="about-dot">▪</span>
-            <img src="images/hike.webp" alt="Photo 2" class="about-dot-image" />
-            <p class="highlight">[ Part-time Hiker ]</p>
+            <div class="about-image-wrap">
+              <img src="images/hike.webp" alt="Photo 2" class="about-dot-image about-image-front" />
+              <img src="images/snowboard.jpeg" alt="Photo 2 alternate" class="about-dot-image about-image-back" />
+            </div>
+            <p class="highlight caption-front">[ part-time hiker ]</p>
+            <p class="highlight caption-back">[ & snowboarder ]</p>
           </div>
+
           <div class="about-dot-item">
-            <span class="about-dot">▪</span>
-            <img src="images/motor.webp" alt="Photo 3" class="about-dot-image" />
-            <p class="highlight">[ Motorcycle Enthusiast ]</p>
+            <div class="about-image-wrap">
+              <img src="images/motor.webp" alt="Photo 3" class="about-dot-image about-image-front" />
+              <img src="images/bike.jpeg" alt="Photo 3 alternate" class="about-dot-image about-image-back" />
+            </div>
+            <p class="highlight caption-front">[ motorcycle enthusiast ]</p>
+            <p class="highlight caption-back">[ MY BIKE ^ ]</p>
           </div>
         </div>
+
       </div>
     </main>
+    <br><br>
 
     <site-footer></site-footer>
+
+    <script>
+      document.querySelectorAll('.about-dot-item').forEach((item) => {
+        item.addEventListener('click', () => {
+          item.classList.toggle('is-flipped');
+        });
+      });
+    </script>
+
   </body>
 </html>

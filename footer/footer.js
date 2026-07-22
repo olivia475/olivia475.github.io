@@ -3,7 +3,7 @@ class SiteFooter extends HTMLElement {
     this.innerHTML = `
       <footer class="footer">
         <div class="footer-left">
-          <p>Vibe coded w/ help from Claude :)</p>
+          <p>Coded w/ Claude :)</p>
           <p class="footer-muted">Last Updated Jun 2026</p>
         </div>
         <div class="footer-right">
