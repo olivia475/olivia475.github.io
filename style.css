@@ -1,14 +1,16 @@
 /* Fonts */
 @font-face {
   font-family: "Alte Haas Grotesk";
-  src: url("fonts/AlteHaasGroteskRegular.ttf");
+  src: url("fonts/AlteHaasGroteskRegular.woff2") format("woff2");
   font-weight: 400;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Alte Haas Grotesk";
-  src: url("fonts/AlteHaasGroteskBold.ttf");
+  src: url("fonts/AlteHaasGroteskBold.woff2") format("woff2");
   font-weight: 700;
+  font-display: swap;
 }
 
 /* Global */
