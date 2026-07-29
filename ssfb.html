@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="projectpage.css" />
     <link rel="icon" type="image/x-icon" href="images/favicon.png" />
+
     <script src="nav/nav.js" defer></script>
     <script src="footer/footer.js" defer></script>
 
@@ -472,126 +473,77 @@
     <site-footer></site-footer>
 
     <script>
-      function matchSideBySideHeight() {
-        document.querySelectorAll(".side-by-side").forEach((container) => {
-          const video = container.querySelector("video");
-          const img = container.querySelector("img");
-          if (!video || !img) return;
+      function computeContainerSize(container) {
+        const video = container.querySelector("video");
+        const imgs = container.querySelectorAll("img");
+        if (!imgs.length) return;
 
-          // reset styles
+        // reset styles before recalculating
+        if (video) {
           video.style.height = "";
           video.style.width = "";
+        }
+        imgs.forEach((img) => {
           img.style.height = "";
           img.style.width = "";
-          container.style.height = "";
+        });
 
-          const containerWidth = container.getBoundingClientRect().width;
-          const gap = 16; // 1rem gap
+        const containerWidth = container.getBoundingClientRect().width;
+        const gap = parseFloat(getComputedStyle(container).gap) || 16;
 
+        if (video && imgs.length === 1) {
+          // video + image case
+          if (!video.videoWidth || !imgs[0].naturalWidth) return; // not ready yet
           const videoRatio = video.videoWidth / video.videoHeight;
-          const imgRatio = img.naturalWidth / img.naturalHeight;
-
-          // solve: videoRatio * h + gap + imgRatio * h = containerWidth
+          const imgRatio = imgs[0].naturalWidth / imgs[0].naturalHeight;
           const h = (containerWidth - gap) / (videoRatio + imgRatio);
-
           video.style.height = h + "px";
           video.style.width = h * videoRatio + "px";
-          img.style.height = h + "px";
-          img.style.width = h * imgRatio + "px";
+          imgs[0].style.height = h + "px";
+          imgs[0].style.width = h * imgRatio + "px";
+        } else if (imgs.length >= 2) {
+          // image + image case
+          if (!imgs[0].naturalWidth || !imgs[1].naturalWidth) return; // not ready yet
+          const ratio1 = imgs[0].naturalWidth / imgs[0].naturalHeight;
+          const ratio2 = imgs[1].naturalWidth / imgs[1].naturalHeight;
+          const h = (containerWidth - gap) / (ratio1 + ratio2);
+          imgs[0].style.height = h + "px";
+          imgs[0].style.width = h * ratio1 + "px";
+          imgs[1].style.height = h + "px";
+          imgs[1].style.width = h * ratio2 + "px";
+        }
+      }
+
+      function setupSideBySide() {
+        const containers = document.querySelectorAll(".side-by-side");
+
+        containers.forEach((container) => {
+          const video = container.querySelector("video");
+          const imgs = container.querySelectorAll("img");
+          let pending = imgs.length + (video ? 1 : 0);
+
+          function ready() {
+            pending--;
+            if (pending <= 0) computeContainerSize(container);
+          }
+
+          imgs.forEach((img) => {
+            if (img.complete && img.naturalWidth) ready();
+            else img.addEventListener("load", ready, { once: true });
+          });
+
+          if (video) {
+            if (video.readyState >= 1) ready();
+            else video.addEventListener("loadedmetadata", ready, { once: true });
+          }
+        });
+
+        window.addEventListener("resize", () => {
+          containers.forEach(computeContainerSize);
         });
       }
 
-      window.addEventListener("resize", matchSideBySideHeight);
-
-      // wait for video metadata and image to load
-      window.addEventListener("load", () => {
-        const video = document.querySelector(".side-by-side video");
-        if (video && video.readyState >= 1) {
-          matchSideBySideHeight();
-        } else if (video) {
-          video.addEventListener("loadedmetadata", matchSideBySideHeight);
-        }
-      });
-    </script>
-
-    <div class="section-nav-progress" id="sectionProgress"></div>
-
-    <nav class="section-nav" id="sectionNav" aria-label="Page sections">
-      <a href="#overview">Overview</a>
-      <a href="#mission">Mission</a>
-      <a href="#solution">Solution</a>
-      <a href="#research">Research</a>
-      <a href="#keyflows">Key Flows</a>
-      <a href="#decisions">Decisions</a>
-      <a href="#final">Final</a>
-      <a href="#takeaways">Takeaways</a>
-    </nav>
-
-    <script>
-      const sectionNav = document.getElementById("sectionNav");
-      const sectionProgress = document.getElementById("sectionProgress");
-      const sectionLinks = sectionNav.querySelectorAll("a");
-      const sectionIds = [
-        "overview",
-        "mission",
-        "solution",
-        "research",
-        "keyflows",
-        "decisions",
-        "final",
-        "takeaways",
-      ];
-
-      window.addEventListener("scroll", () => {
-        if (window.innerWidth <= 600) return;
-
-        const scrolled = window.scrollY;
-        const total = document.body.scrollHeight - window.innerHeight;
-        const ratio = total > 0 ? scrolled / total : 0;
-
-        const finalSection = document.getElementById("takeaways");
-        const reachedFinal =
-          finalSection && scrolled >= finalSection.offsetTop - 140;
-
-        const show = scrolled > 200 && !reachedFinal;
-
-        sectionNav.classList.toggle("visible", show);
-        sectionProgress.classList.toggle("visible", show);
-        sectionProgress.style.width = ratio * 100 + "%";
-
-        let current = "";
-        sectionIds.forEach((id) => {
-          const el = document.getElementById(id);
-          if (el && scrolled >= el.offsetTop - 140) current = id;
-        });
-        sectionLinks.forEach((a) => {
-          a.classList.toggle(
-            "active",
-            a.getAttribute("href") === "#" + current,
-          );
-        });
-      });
-    </script>
-  
-    <script>
-      // Lazy-play videos: only play when scrolled into view, pause when
-      // out of view. preload="metadata" keeps initial page load light —
-      // full video bytes only start streaming once a clip is playing.
-      const lazyVideos = document.querySelectorAll("video");
-      const lazyVideoObserver = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            const video = entry.target;
-            if (entry.isIntersecting) {
-              video.play().catch(() => {});
-            } else {
-              video.pause();
-            }
-          });
-        },
-        { rootMargin: "200px", threshold: 0.1 },
-      );
-      lazyVideos.forEach((video) => lazyVideoObserver.observe(video));
+      window.addEventListener("load", setupSideBySide);
     </script>
 
   </body>
