@@ -12,7 +12,7 @@ class SiteNav extends HTMLElement {
         </button>
         <ul class="nav-links">
           <li><a href="index.html#work" class="nav-link">Work</a></li>
-          <li><a href="play.html" class="nav-link">Archive</a></li>
+          <li><a href="play.html" class="nav-link">Play</a></li>
           <li><a href="about.html" class="nav-link">About</a></li>
           <li><a href="Resume2026OB.pdf" class="nav-link">Resume</a></li>
         </ul>
