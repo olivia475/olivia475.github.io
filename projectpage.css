@@ -236,6 +236,21 @@
   }
 }
 
+/* Fix: when a .grid-overlay (e.g. "Watch" overlays) sits inside a
+   .side-by-side row, the .side-by-side p rule above wins on source
+   order despite equal specificity, knocking the label off-center and
+   dropping its font. This selector is more specific, so it wins instead
+   and restores the same centered/mono styling as other overlays. */
+.side-by-side .grid-overlay p {
+  position: static;
+  margin: 0;
+  font-family: "DM Mono", monospace;
+  font-weight: 800;
+  color: #1a1a1a;
+  text-align: center;
+  max-width: none;
+}
+
 .six-sq-img-row {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
