@@ -3,7 +3,7 @@ class SiteNav extends HTMLElement {
     this.innerHTML = `
       <nav class="navbar">
         <a href="index.html" class="nav-link nav-logo">
-          <span class="nav-logo-dot">▪</span> Olivia Blackmore<span class="nav-logo-subtitle"> [ Designer ]</span>
+          <span class="nav-logo-dot">▪</span> Olivia Blackmore<span class="nav-logo-subtitle"> [ designer ]</span>
         </a>
         <button class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false">
           <span></span>

@@ -231,7 +231,6 @@ html {
 .dot-label {
   font-family: "DM Mono", monospace;
   font-size: 0.75rem;
-  font-style: italic;
   opacity: 0;
   transform: translateY(-4px);
   transition:
@@ -513,7 +512,6 @@ html {
 .about-link {
   font-family: "DM Mono", monospace;
   font-size: 0.75rem;
-  font-style: italic;
   text-decoration: none;
   color: #1a1a1a;
 }
