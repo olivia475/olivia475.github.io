@@ -47,7 +47,7 @@
           <p>Figma<br />After Effects</p>
         </div>
         <div class="meta-item">
-          <p class="highlight">[ MY ROLES ]</p>
+          <p class="highlight">[ ROLES ]</p>
           <p>
             UX Research<br />
             User Journey<br />
@@ -736,7 +736,41 @@
         });
       }
 
-      window.addEventListener("load", setupSideBySide);
+      // Lazy-autoplay: keeps preload="metadata" for fast initial page load
+      // (only duration/dimensions are fetched up front, not the full video),
+      // and instead starts playback via IntersectionObserver right as each
+      // video approaches the viewport, pausing it again once scrolled past.
+      function setupLazyAutoplay() {
+        const videos = document.querySelectorAll("video");
+        if (!videos.length || !("IntersectionObserver" in window)) return;
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              const video = entry.target;
+              if (entry.isIntersecting) {
+                video.play().catch(() => {
+                  // autoplay can be blocked before user interaction on some
+                  // browsers; it'll silently retry next time it intersects
+                });
+              } else {
+                video.pause();
+              }
+            });
+          },
+          {
+            threshold: 0.25,
+            rootMargin: "200px 0px 200px 0px", // start a little before it's on screen
+          },
+        );
+
+        videos.forEach((video) => observer.observe(video));
+      }
+
+      window.addEventListener("load", () => {
+        setupSideBySide();
+        setupLazyAutoplay();
+      });
     </script>
 
     <div class="section-nav-progress" id="sectionProgress"></div>
