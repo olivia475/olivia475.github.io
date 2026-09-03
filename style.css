@@ -431,6 +431,7 @@ html {
 
 .grid p {
   padding-bottom: 0;
+  padding-top: 0.5rem;
 }
 
 @media (max-width: 50rem) {
