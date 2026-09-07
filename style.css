@@ -96,6 +96,18 @@ section {
   font-size: 0.8rem;
 }
 
+/* ABOUT PAGE experience/awards highlight links */
+.about-experience-link {
+  color: #aaaaaa;
+}
+
+.about-experience-link:hover {
+  color: #1a1a1a;
+  transition: color 0.3s ease-in-out;
+}
+
+
+
 html {
   scroll-behavior: smooth;
 }
@@ -663,6 +675,25 @@ html {
 .experience-grid .inline-logo {
   justify-self: center;
 }
+
+.experience-grid .highlight {
+  display: block;
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.experience-grid .highlight2 {
+  font-family: "DM Mono", monospace;
+  font-weight: 500;
+  color: #1a1a1a;
+  font-size: 0.8rem;
+  display: block;
+  margin-top: 0.7rem;
+  padding: 0;
+}
+
+
 
 @media (max-width: 800px) {
   .about-layout {

@@ -4,7 +4,7 @@ class SiteFooter extends HTMLElement {
       <footer class="footer">
         <div class="footer-left">
           <p>Coded w/ HTML, CSS, and a little JavaScript :)</p>
-          <p class="footer-muted">Last Updated Jun 2026</p>
+          <p class="footer-muted">Last Updated AUG 2026</p>
         </div>
         <div class="footer-right">
           <a href="https://www.linkedin.com/in/olivia--blackmore" class="footer-link" target="_blank">LinkedIn ></a>
