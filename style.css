@@ -98,11 +98,11 @@ section {
 
 /* ABOUT PAGE experience/awards highlight links */
 .about-experience-link {
-  color: #aaaaaa;
+  color: #1a1a1a;
 }
 
 .about-experience-link:hover {
-  color: #1a1a1a;
+  color: #aaaaaa;
   transition: color 0.3s ease-in-out;
 }
 
@@ -120,14 +120,6 @@ html {
   max-width: 1100px;
   margin: 0 auto;
   padding: 2rem;
-}
-
-.inline-logo {
-  height: 1.2em;
-  width: auto;
-  vertical-align: middle;
-  border-radius: 2px;
-  margin-right: 1rem;
 }
 
 .divider {
@@ -538,9 +530,10 @@ html {
 }
 
 .inline-logo {
-  height: 2rem; /* was 1.2em */
+  height: 2rem; 
   width: auto;
   vertical-align: middle;
+  justify-self: center;
   border-radius: 2px;
   margin-right: 0;
 }
@@ -659,10 +652,6 @@ html {
 
 
 /* about page experience grid */
-.experience-grid h3 {
-  margin: 0;
-}
-
 .experience-grid {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -670,10 +659,6 @@ html {
   align-items: center;
   justify-items: start; /* default */
   margin-top: 4rem;
-}
-
-.experience-grid .inline-logo {
-  justify-self: center;
 }
 
 .experience-grid .highlight {
@@ -686,10 +671,8 @@ html {
 .experience-grid .highlight2 {
   font-family: "DM Mono", monospace;
   font-weight: 500;
-  color: #1a1a1a;
+  color: #aaaaaa;
   font-size: 0.8rem;
-  display: block;
-  margin-top: 0.7rem;
   padding: 0;
 }
 
