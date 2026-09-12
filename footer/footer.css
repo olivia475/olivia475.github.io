@@ -6,7 +6,7 @@
   border-top: 1px solid #1a1a1a40;
   font-family: "DM Mono", monospace;
   font-size: 0.8rem;
-  font-style: italic;
+  font-style: normal;
   padding-bottom: 1rem;
   margin-top: 2rem;
 }
@@ -16,8 +16,11 @@
   line-height: 1.5;
 }
 
-.footer-muted {
-  color: #999;
+.highlight {
+  font-family: "DM Mono", monospace;
+  font-weight: 500;
+  color: #aaaaaa;
+  font-size: 0.8rem;
 }
 
 .footer-right {
@@ -29,7 +32,7 @@
 
 .footer-link {
   color: #1a1a1a;
-  text-decoration: none;
+  text-decoration: underline;
   transition: opacity 0.2s;
 }
 

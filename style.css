@@ -32,6 +32,7 @@ textarea,
 
 body {
   padding-top: 3rem;
+  background-color: #fdfdfd;
 }
 
 h1 {
@@ -99,11 +100,11 @@ section {
 /* ABOUT PAGE experience/awards highlight links */
 .about-experience-link {
   color: #1a1a1a;
+  transition: opacity 0.2s;
 }
 
 .about-experience-link:hover {
-  color: #aaaaaa;
-  transition: color 0.3s ease-in-out;
+  opacity: 0.5;
 }
 
 
@@ -649,8 +650,6 @@ html {
   opacity: 1;
 }
 
-
-
 /* about page experience grid */
 .experience-grid {
   display: grid;
@@ -681,5 +680,21 @@ html {
 @media (max-width: 800px) {
   .about-layout {
     grid-template-columns: 1fr;
+  }
+}
+
+
+
+
+/* viewport fade in blocks */
+.loadin {
+  opacity: 0;
+  transform: translateY(45px);
+  transition: transform 0.6s, opacity 0.9s;
+
+  &.loaded {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0s;
   }
 }
