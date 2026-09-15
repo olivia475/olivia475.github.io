@@ -2,8 +2,8 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  border-top: 1px solid #1a1a1a40;
   padding: 2rem;
+  border-top: 1px solid #1a1a1a40;
   font-family: "DM Mono", monospace;
   font-size: 0.8rem;
   font-style: normal;

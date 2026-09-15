@@ -127,13 +127,6 @@ html {
   max-width: 100%;
 }
 
-/* Hero */
-.hero-about-section {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
 @media (max-width: 700px) {
   .hero-bottom {
     grid-template-columns: 1fr; /* stack into single column */
