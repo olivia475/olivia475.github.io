@@ -24,7 +24,11 @@ button,
 input,
 label,
 select,
-textarea
+textarea,
+.carousel-item,
+.carousel-dot {
+  cursor: url("images/cursor-hover.png"), pointer;
+}
 
 body {
   padding-top: 3rem;
